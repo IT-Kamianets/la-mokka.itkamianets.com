@@ -1,0 +1,156 @@
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#232323]"></div>
+  <!-- Decorative blobs -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFA11B]/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#FFA11B]/5 rounded-full blur-3xl"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+    <!-- Logo mark -->
+    <div class="flex justify-center mb-6">
+      <img src="https://cdn-media.choiceqr.com/prod-eat-la-mokka/logo/thumbnail_QOqhcjT-pcGqobt-BeFGHOS_L-D-L.png"
+           alt="La Mokka"
+           class="w-20 h-20 rounded-full object-cover shadow-lg shadow-[#FFA11B]/30">
+    </div>
+
+    <p class="text-[#FFA11B] text-sm font-semibold tracking-[0.3em] uppercase mb-3">
+      Бранч Кафе
+    </p>
+    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#d6d6d6] mb-4 leading-tight">
+      La Mokka
+    </h1>
+    <p class="text-[#d6d6d6]/70 text-lg sm:text-xl mb-10 leading-relaxed">
+      Авторські сніданки, ароматна кава та затишна атмосфера<br class="hidden sm:block">
+      у серці Кам'янець-Подільського
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/menu"
+         class="bg-[#FFA11B] text-[#232323] px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#e8911a] transition-all hover:scale-105 shadow-lg shadow-[#FFA11B]/25">
+        Переглянути меню
+      </a>
+      <a routerLink="/reservation"
+         class="border border-[#FFA11B] text-[#FFA11B] px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#FFA11B]/10 transition-all">
+        Забронювати стіл
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
+      <span class="text-[#d6d6d6]/30 text-xs">Гортайте</span>
+      <svg class="w-4 h-4 text-[#d6d6d6]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- About / Info Section -->
+<section class="py-20 px-4">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Info card 1 -->
+      <div class="bg-[#2d2d2d] rounded-2xl p-8 border border-white/5 hover:border-[#FFA11B]/30 transition-colors group">
+        <div class="w-12 h-12 rounded-xl bg-[#FFA11B]/15 flex items-center justify-center mb-5 group-hover:bg-[#FFA11B]/25 transition-colors">
+          <svg class="w-6 h-6 text-[#FFA11B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-[#d6d6d6] font-bold text-lg mb-2">Години роботи</h3>
+        <p class="text-[#d6d6d6]/60 text-sm leading-relaxed">
+          Відкриті щодня<br>
+          <span class="text-[#d6d6d6]/80 font-medium">08:00 – 22:00</span><br>
+          Кухня: 08:30 – 21:00
+        </p>
+      </div>
+
+      <!-- Info card 2 -->
+      <div class="bg-[#2d2d2d] rounded-2xl p-8 border border-white/5 hover:border-[#FFA11B]/30 transition-colors group">
+        <div class="w-12 h-12 rounded-xl bg-[#FFA11B]/15 flex items-center justify-center mb-5 group-hover:bg-[#FFA11B]/25 transition-colors">
+          <svg class="w-6 h-6 text-[#FFA11B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-[#d6d6d6] font-bold text-lg mb-2">Адреса</h3>
+        <p class="text-[#d6d6d6]/60 text-sm leading-relaxed">
+          вул. Соборна, 9<br>
+          <span class="text-[#d6d6d6]/80">Кам'янець-Подільський</span>
+        </p>
+      </div>
+
+      <!-- Info card 3 -->
+      <div class="bg-[#2d2d2d] rounded-2xl p-8 border border-white/5 hover:border-[#FFA11B]/30 transition-colors group">
+        <div class="w-12 h-12 rounded-xl bg-[#FFA11B]/15 flex items-center justify-center mb-5 group-hover:bg-[#FFA11B]/25 transition-colors">
+          <svg class="w-6 h-6 text-[#FFA11B]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </div>
+        <h3 class="text-[#d6d6d6] font-bold text-lg mb-2">Instagram</h3>
+        <a href="https://instagram.com/lamokka.kp" target="_blank" rel="noopener noreferrer"
+           class="text-[#FFA11B] text-sm hover:underline">&#64;lamokka.kp</a>
+        <p class="text-[#d6d6d6]/60 text-sm mt-1">Підписуйтесь на нас!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature highlights -->
+<section class="py-16 px-4 bg-[#2d2d2d]/40">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#d6d6d6] mb-3">Чому обирають нас</h2>
+      <p class="text-[#d6d6d6]/60 text-lg">Ми дбаємо про кожну деталь вашого відвідування</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="text-center p-6">
+        <div class="text-4xl mb-4">☕</div>
+        <h4 class="text-[#d6d6d6] font-semibold mb-2">Авторська кава</h4>
+        <p class="text-[#d6d6d6]/50 text-sm">Відбірні зерна та майстерне приготування</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-4xl mb-4">🍳</div>
+        <h4 class="text-[#d6d6d6] font-semibold mb-2">Свіжі сніданки</h4>
+        <p class="text-[#d6d6d6]/50 text-sm">Тільки свіжі інгредієнти щодня</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-4xl mb-4">🌿</div>
+        <h4 class="text-[#d6d6d6] font-semibold mb-2">Затишна атмосфера</h4>
+        <p class="text-[#d6d6d6]/50 text-sm">Ідеальне місце для зустрічей та відпочинку</p>
+      </div>
+      <div class="text-center p-6">
+        <div class="text-4xl mb-4">📍</div>
+        <h4 class="text-[#d6d6d6] font-semibold mb-2">Зручне розташування</h4>
+        <p class="text-[#d6d6d6]/50 text-sm">У самому центрі міста</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="py-20 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold text-[#d6d6d6] mb-4">
+      Готові до смачного ранку?
+    </h2>
+    <p class="text-[#d6d6d6]/60 text-lg mb-8">
+      Забронюйте стіл заздалегідь або просто завітайте до нас
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a routerLink="/reservation"
+         class="bg-[#FFA11B] text-[#232323] px-8 py-3.5 rounded-full font-bold hover:bg-[#e8911a] transition-all hover:scale-105 shadow-lg shadow-[#FFA11B]/25">
+        Забронювати стіл
+      </a>
+      <a routerLink="/contact"
+         class="border border-white/20 text-[#d6d6d6] px-8 py-3.5 rounded-full font-medium hover:border-white/40 transition-all">
+        Як нас знайти
+      </a>
+    </div>
+  </div>
+</section>

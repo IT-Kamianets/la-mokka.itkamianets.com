@@ -1,0 +1,87 @@
+<div class="pt-20 min-h-screen bg-[#232323]">
+  <!-- Page Header -->
+  <div class="bg-gradient-to-b from-[#1a1a1a] to-[#232323] py-16 px-4">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-[#FFA11B] text-sm font-semibold tracking-[0.3em] uppercase mb-2">La Mokka</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-[#d6d6d6] mb-4">Наше меню</h1>
+      <p class="text-[#d6d6d6]/60 text-lg">Авторські страви з якісних інгредієнтів</p>
+    </div>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="sticky top-16 z-40 bg-[#232323]/95 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex gap-1 py-3">
+        @for (tab of tabs; track tab.key) {
+          <button
+            (click)="setTab(tab.key)"
+            [class]="activeTab() === tab.key
+              ? 'bg-[#FFA11B] text-[#232323] font-bold shadow-md shadow-[#FFA11B]/20'
+              : 'text-[#d6d6d6]/70 hover:text-[#d6d6d6] hover:bg-white/5'"
+            class="px-5 py-2.5 rounded-full text-sm font-medium transition-all">
+            {{ tab.label }}
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+
+  <!-- Menu Items Grid -->
+  <div class="max-w-7xl mx-auto px-4 py-10">
+    @if (isLoading()) {
+      <div class="flex justify-center py-20">
+        <div class="w-10 h-10 rounded-full border-2 border-[#FFA11B] border-t-transparent animate-spin"></div>
+      </div>
+    } @else {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (item of filteredItems(); track item.id) {
+          <article class="bg-[#2d2d2d] rounded-2xl overflow-hidden border border-white/5 hover:border-[#FFA11B]/30 transition-all hover:-translate-y-1 group">
+            <!-- Image -->
+            <div class="relative overflow-hidden h-48">
+              <img
+                [src]="item.image"
+                [alt]="item.name"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+                onerror="this.src='https://picsum.photos/seed/food/400/300'">
+              <!-- Prep time badge -->
+              <span class="absolute top-3 right-3 bg-[#232323]/80 backdrop-blur-sm text-[#d6d6d6]/80 text-xs px-2.5 py-1 rounded-full">
+                ⏱ {{ item.prepTime }}
+              </span>
+            </div>
+
+            <!-- Content -->
+            <div class="p-5">
+              <h3 class="text-[#d6d6d6] font-bold text-base mb-1.5 leading-tight">{{ item.name }}</h3>
+              <p class="text-[#d6d6d6]/55 text-sm leading-relaxed mb-4">{{ item.description }}</p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-[#d6d6d6]/40 text-xs">{{ item.weight }}</span>
+                <span class="text-[#FFA11B] font-bold text-lg">{{ item.price }} ₴</span>
+              </div>
+            </div>
+          </article>
+        }
+      </div>
+
+      @if (filteredItems().length === 0) {
+        <div class="text-center py-20 text-[#d6d6d6]/40">
+          <div class="text-6xl mb-4">🍽️</div>
+          <p class="text-lg">Розділ поповнюється...</p>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- Hours note -->
+  <div class="max-w-7xl mx-auto px-4 pb-16">
+    <div class="bg-[#2d2d2d] rounded-2xl p-6 border border-[#FFA11B]/20 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+      <svg class="w-5 h-5 text-[#FFA11B] shrink-0 mt-0.5 sm:mt-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+      </svg>
+      <p class="text-[#d6d6d6]/70 text-sm">
+        <span class="text-[#FFA11B] font-semibold">Сніданки подаються:</span> щодня з 08:30 до 21:00
+      </p>
+    </div>
+  </div>
+</div>
