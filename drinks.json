@@ -1,0 +1,98 @@
+{
+  "section": "НАПОЇ",
+  "categories": [
+    {
+      "category": "Холодні напої",
+      "products": [
+        {
+          "slug": "ays-kakao",
+          "title": "Айс какао",
+          "price": 50,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/iwuqCIb-XsuadhZ-xcudYra.jpeg"
+        },
+        {
+          "slug": "ays-late",
+          "title": "Айс лате",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lkPGXti-JGetGGo-bgbYvuh.jpeg"
+        },
+        {
+          "slug": "ays-raf",
+          "title": "Айс Раф",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/vbFGdQW-CvDFMqE-thbOdqg.jpeg"
+        },
+        {
+          "slug": "ays-kapuchino",
+          "title": "Айс капучино",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/zkCrHkP-LdQAJeB-fHRNGVk.jpeg"
+        },
+        {
+          "slug": "shtorm",
+          "title": "Шторм",
+          "price": 60,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/QkXyRGL-eJfbyYK-NDySvSP.jpeg"
+        },
+        {
+          "slug": "espreso-tonik",
+          "title": "Еспресо тонік",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/sNsQKfC-BRmExyL-CMIYJpg.jpeg"
+        },
+        {
+          "slug": "milksheyk",
+          "title": "Мілкшейк",
+          "price": 65,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FloQMbP-JAeIsQq-tCjkoZL.jpeg"
+        },
+        {
+          "slug": "frape",
+          "title": "Фрапе",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/gLzWHrl-Yehapdk-OUnJepD.jpeg"
+        },
+        {
+          "slug": "dzhmil",
+          "title": "Джміль",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/kBaVdaq-xJkEflg-ByzDwCh.jpeg"
+        },
+        {
+          "slug": "babl-late",
+          "title": "Бабл-лате",
+          "price": 75,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HesYaNm-npnEJgA-GLCckLb.jpeg"
+        },
+        {
+          "slug": "babl-ti",
+          "title": "Бабл-ті",
+          "price": 75,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FSoPInj-sbMkHzR-uyBPlMQ.jpeg"
+        },
+        {
+          "slug": "mohito",
+          "title": "Мохіто",
+          "price": 50,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/JoXCkDu-eojNMXN-uIgDZqK.jpeg"
+        },
+        {
+          "slug": "bananoviy-limonad",
+          "title": "Банановий лимонад",
+          "price": 60,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uOGIvIN-vrHbaeG-DPUXcCp.jpeg"
+        },
+        {
+          "slug": "matcha-orandzh",
+          "title": "Матча орандж",
+          "price": 55,
+          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HDtKDuV-ehJYYmQ-lLuhAhG.jpeg"
+        }
+      ]
+    },
+    {
+      "category": "Кава",
+      "products": []
+    }
+  ]
+}
