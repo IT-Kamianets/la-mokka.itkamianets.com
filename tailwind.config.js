@@ -6,13 +6,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accent: '#FFA11B',
-        'dark-bg': '#232323',
-        'card-bg': '#2d2d2d',
-        'text-main': '#d6d6d6',
+        accent: '#C8A96E',
+        'dark-bg': '#111111',
+        'card-bg': '#1a1a1a',
+        'text-main': '#f0ece4',
       },
       fontFamily: {
         sans: ['Oxygen', 'sans-serif'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
       },
     },
   },

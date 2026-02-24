@@ -702,61 +702,301 @@
   {
     "id": 71,
     "category": "drinks",
-    "name": "Еспресо",
-    "description": "Класичний міцний еспресо з відбірної арабіки",
-    "price": 55,
-    "weight": "30мл",
+    "name": "Рістрето",
+    "description": "Концентрований еспресо з меншою кількістю води — насичений і ароматний",
+    "price": 30,
+    "weight": "90мл",
     "prepTime": "3 хв",
-    "image": "https://picsum.photos/seed/espresso/400/300"
+    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop&auto=format"
   },
   {
     "id": 72,
     "category": "drinks",
-    "name": "Капучіно",
-    "description": "Ніжний капучіно з оксамитовою молочною пінкою",
-    "price": 75,
-    "weight": "200мл",
-    "prepTime": "5 хв",
-    "image": "https://picsum.photos/seed/cappuccino/400/300"
+    "name": "Еспресо",
+    "description": "Класичний міцний еспресо з відбірної арабіки",
+    "price": 30,
+    "weight": "90мл",
+    "prepTime": "3 хв",
+    "image": "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=400&h=300&fit=crop&auto=format"
   },
   {
     "id": 73,
     "category": "drinks",
-    "name": "Латте",
-    "description": "М'який кавовий напій з великою кількістю вершкового молока",
-    "price": 80,
-    "weight": "300мл",
-    "prepTime": "5 хв",
-    "image": "https://picsum.photos/seed/latte/400/300"
+    "name": "Допіо",
+    "description": "Подвійний еспресо для справжніх поціновувачів кави",
+    "price": 55,
+    "weight": "250мл",
+    "prepTime": "3 хв",
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format"
   },
   {
     "id": 74,
     "category": "drinks",
-    "name": "Смузі Ягідний",
-    "description": "Освіжаючий смузі з полуниці, чорниці та малини з йогуртом",
-    "price": 95,
-    "weight": "350мл",
-    "prepTime": "5 хв",
-    "image": "https://picsum.photos/seed/smoothie/400/300"
+    "name": "Лунго",
+    "description": "Довгий еспресо з м'якшим смаком та більшим об'ємом",
+    "price": 30,
+    "weight": "250мл",
+    "prepTime": "3 хв",
+    "image": "https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?w=400&h=300&fit=crop&auto=format"
   },
   {
     "id": 75,
     "category": "drinks",
-    "name": "Свіжовичавлений сік",
-    "description": "Апельсиновий або грейпфрутовий сік свіжого приготування",
-    "price": 85,
-    "weight": "300мл",
-    "prepTime": "5 хв",
-    "image": "https://picsum.photos/seed/juice/400/300"
+    "name": "Американо",
+    "description": "Еспресо розбавлений гарячою водою — м'який і збалансований",
+    "price": 30,
+    "weight": "250мл",
+    "prepTime": "3 хв",
+    "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop&auto=format"
   },
   {
     "id": 76,
     "category": "drinks",
-    "name": "Гарячий шоколад",
-    "description": "Густий бельгійський гарячий шоколад з вершками",
-    "price": 85,
+    "name": "Без кофеїну",
+    "description": "Смак справжньої кави без кофеїну",
+    "price": 30,
+    "weight": "250мл",
+    "prepTime": "3 хв",
+    "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 77,
+    "category": "drinks",
+    "name": "Капучино",
+    "description": "L — 40 грн / XL — 45 грн. Ніжний капучино з оксамитовою молочною пінкою",
+    "price": 40,
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://picsum.photos/seed/hotchoco/400/300"
+    "image": "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 78,
+    "category": "drinks",
+    "name": "Раф-кава",
+    "description": "L — 55 грн / XL — 65 грн. Вершкова кава з ніжним смаком ванілі",
+    "price": 55,
+    "weight": "250мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 79,
+    "category": "drinks",
+    "name": "Флет-уайт",
+    "description": "L — 60 грн / XL — 70 грн. Міцний еспресо з невеликою кількістю оксамитового молока",
+    "price": 60,
+    "weight": "250мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 80,
+    "category": "drinks",
+    "name": "Лате",
+    "description": "L — 45 грн / XL — 50 грн. М'який кавовий напій з великою кількістю вершкового молока",
+    "price": 45,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 81,
+    "category": "drinks",
+    "name": "Матча лате",
+    "description": "Японський зелений чай матча з вершковим молоком",
+    "price": 65,
+    "weight": "330мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 82,
+    "category": "drinks",
+    "name": "Гарбузове лате",
+    "description": "Сезонний лате з гарбузовим сиропом та теплими спеціями",
+    "price": 60,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 83,
+    "category": "drinks",
+    "name": "Халва лате",
+    "description": "Авторський лате з ніжним смаком халви",
+    "price": 60,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 84,
+    "category": "drinks",
+    "name": "Кава по-ірландськи",
+    "description": "Класичний ірландський кавовий коктейль зі збитими вершками",
+    "price": 75,
+    "weight": "250мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 85,
+    "category": "drinks",
+    "name": "Фільтр-кава",
+    "description": "Повільно заварена фільтрована кава з яскравим смаком",
+    "price": 40,
+    "weight": "250мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop&auto=format"
+  },
+  {
+    "id": 86,
+    "category": "drinks",
+    "name": "Айс какао",
+    "description": "Освіжаючий холодний какао напій з льодом",
+    "price": 50,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/iwuqCIb-XsuadhZ-xcudYra.jpeg"
+  },
+  {
+    "id": 87,
+    "category": "drinks",
+    "name": "Айс лате",
+    "description": "Класичний латте з льодом — освіжаючий та ароматний",
+    "price": 55,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lkPGXti-JGetGGo-bgbYvuh.jpeg"
+  },
+  {
+    "id": 88,
+    "category": "drinks",
+    "name": "Айс Раф",
+    "description": "Холодна версія вершкової раф-кави з льодом",
+    "price": 55,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/vbFGdQW-CvDFMqE-thbOdqg.jpeg"
+  },
+  {
+    "id": 89,
+    "category": "drinks",
+    "name": "Айс капучино",
+    "description": "Капучино з льодом для спекотних днів",
+    "price": 55,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/zkCrHkP-LdQAJeB-fHRNGVk.jpeg"
+  },
+  {
+    "id": 90,
+    "category": "drinks",
+    "name": "Шторм",
+    "description": "Авторський холодний кавовий напій з яскравим смаком",
+    "price": 60,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/QkXyRGL-eJfbyYK-NDySvSP.jpeg"
+  },
+  {
+    "id": 91,
+    "category": "drinks",
+    "name": "Еспресо тонік",
+    "description": "Освіжаюче поєднання еспресо та тоніку з льодом",
+    "price": 55,
+    "weight": "300мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/sNsQKfC-BRmExyL-CMIYJpg.jpeg"
+  },
+  {
+    "id": 92,
+    "category": "drinks",
+    "name": "Мілкшейк",
+    "description": "Густий вершковий молочний коктейль на вибір смаку",
+    "price": 65,
+    "weight": "400мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FloQMbP-JAeIsQq-tCjkoZL.jpeg"
+  },
+  {
+    "id": 93,
+    "category": "drinks",
+    "name": "Фрапе",
+    "description": "Збитий холодний кавовий напій з льодом та вершками",
+    "price": 55,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/gLzWHrl-Yehapdk-OUnJepD.jpeg"
+  },
+  {
+    "id": 94,
+    "category": "drinks",
+    "name": "Джміль",
+    "description": "Авторський холодний напій з медом та кавою",
+    "price": 55,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/kBaVdaq-xJkEflg-ByzDwCh.jpeg"
+  },
+  {
+    "id": 95,
+    "category": "drinks",
+    "name": "Бабл-лате",
+    "description": "Лате з тапіоковими кульками — модний та смачний напій",
+    "price": 75,
+    "weight": "400мл",
+    "prepTime": "7 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HesYaNm-npnEJgA-GLCckLb.jpeg"
+  },
+  {
+    "id": 96,
+    "category": "drinks",
+    "name": "Бабл-ті",
+    "description": "Чай з тапіоковими кульками на вибір смаку",
+    "price": 75,
+    "weight": "400мл",
+    "prepTime": "7 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FSoPInj-sbMkHzR-uyBPlMQ.jpeg"
+  },
+  {
+    "id": 97,
+    "category": "drinks",
+    "name": "Мохіто",
+    "description": "Вишня / Чорниця / Фрукти — освіжаючий безалкогольний мохіто",
+    "price": 50,
+    "weight": "400мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/JoXCkDu-eojNMXN-uIgDZqK.jpeg"
+  },
+  {
+    "id": 98,
+    "category": "drinks",
+    "name": "Банановий лимонад",
+    "description": "Освіжаючий домашній лимонад з бананом та цитрусом",
+    "price": 60,
+    "weight": "400мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uOGIvIN-vrHbaeG-DPUXcCp.jpeg"
+  },
+  {
+    "id": 99,
+    "category": "drinks",
+    "name": "Матча оранж",
+    "description": "Освіжаючий напій з матчею та апельсиновим соком",
+    "price": 55,
+    "weight": "350мл",
+    "prepTime": "5 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HDtKDuV-ehJYYmQ-lLuhAhG.jpeg"
+  },
+  {
+    "id": 100,
+    "category": "drinks",
+    "name": "Капучино оранж",
+    "description": "Капучино з апельсиновим сиропом — несподівано свіжий смак",
+    "price": 50,
+    "weight": "250мл",
+    "prepTime": "5 хв",
+    "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop&auto=format"
   }
 ]

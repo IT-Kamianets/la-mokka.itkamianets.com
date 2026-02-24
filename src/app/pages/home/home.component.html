@@ -1,26 +1,53 @@
 <!-- Hero Section -->
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background gradient -->
-  <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#1a1a1a] to-[#232323]"></div>
-  <!-- Decorative blobs -->
-  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFA11B]/10 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#FFA11B]/5 rounded-full blur-3xl"></div>
+  <!-- Background gradient — matches dark café exterior -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black via-[#0d0d0d] to-[#111111]"></div>
+  <!-- Subtle warm glow at bottom -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-64 bg-[#C8A96E]/5 blur-3xl"></div>
 
   <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
-    <!-- Logo mark -->
-    <div class="flex justify-center mb-6">
-      <img src="https://cdn-media.choiceqr.com/prod-eat-la-mokka/logo/thumbnail_QOqhcjT-pcGqobt-BeFGHOS_L-D-L.png"
-           alt="La Mokka"
-           class="w-20 h-20 rounded-full object-cover shadow-lg shadow-[#FFA11B]/30">
+    <!-- Decorative branch above title (matches logo) -->
+    <div class="flex justify-center mb-8">
+      <svg class="w-40 h-10 text-white/65" viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left stem -->
+        <path d="M80 37 C68 29 50 21 22 12" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+        <!-- Right stem -->
+        <path d="M80 37 C92 29 110 21 138 12" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+        <!-- Center berry -->
+        <circle cx="80" cy="37" r="1.8" fill="currentColor"/>
+
+        <!-- Left leaves (alternating above/below stem) -->
+        <ellipse cx="67" cy="30" rx="8" ry="3" transform="rotate(-32 67 30)" fill="currentColor"/>
+        <ellipse cx="55" cy="25" rx="8" ry="3" transform="rotate(-40 55 25)" fill="currentColor"/>
+        <ellipse cx="43" cy="20" rx="7" ry="2.8" transform="rotate(-47 43 20)" fill="currentColor"/>
+        <ellipse cx="31" cy="15" rx="6.5" ry="2.5" transform="rotate(-54 31 15)" fill="currentColor"/>
+
+        <!-- Right leaves (mirrored) -->
+        <ellipse cx="93" cy="30" rx="8" ry="3" transform="rotate(32 93 30)" fill="currentColor"/>
+        <ellipse cx="105" cy="25" rx="8" ry="3" transform="rotate(40 105 25)" fill="currentColor"/>
+        <ellipse cx="117" cy="20" rx="7" ry="2.8" transform="rotate(47 117 20)" fill="currentColor"/>
+        <ellipse cx="129" cy="15" rx="6.5" ry="2.5" transform="rotate(54 129 15)" fill="currentColor"/>
+      </svg>
     </div>
 
-    <p class="text-[#FFA11B] text-sm font-semibold tracking-[0.3em] uppercase mb-3">
-      Бранч Кафе
-    </p>
-    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-[#d6d6d6] mb-4 leading-tight">
+    <!-- Brand name — golden -->
+    <h1 class="font-serif text-6xl sm:text-7xl lg:text-8xl font-semibold text-[#C8A96E] mb-3 leading-none tracking-tight">
       La Mokka
     </h1>
-    <p class="text-[#d6d6d6]/70 text-lg sm:text-xl mb-10 leading-relaxed">
+
+    <!-- Subtitle — white -->
+    <p class="text-white/80 text-xs sm:text-sm tracking-[0.5em] uppercase font-light mb-8">
+      Brunch Café
+    </p>
+
+    <!-- Decorative white line -->
+    <div class="flex items-center justify-center gap-4 mb-8">
+      <div class="h-px w-16 bg-white/25"></div>
+      <div class="w-1 h-1 rounded-full bg-white/40"></div>
+      <div class="h-px w-16 bg-white/25"></div>
+    </div>
+
+    <p class="text-[#f0ece4]/55 text-base sm:text-lg mb-10 leading-relaxed font-light">
       Авторські сніданки, ароматна кава та затишна атмосфера<br class="hidden sm:block">
       у серці Кам'янець-Подільського
     </p>
@@ -28,127 +55,151 @@
     <!-- CTA Buttons -->
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a routerLink="/menu"
-         class="bg-[#FFA11B] text-[#232323] px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#e8911a] transition-all hover:scale-105 shadow-lg shadow-[#FFA11B]/25">
+         class="bg-[#C8A96E] text-[#111111] px-8 py-3.5 text-sm tracking-widest uppercase font-bold hover:bg-[#b89558] transition-all">
         Переглянути меню
       </a>
       <a routerLink="/reservation"
-         class="border border-[#FFA11B] text-[#FFA11B] px-8 py-3.5 rounded-full font-bold text-base hover:bg-[#FFA11B]/10 transition-all">
+         class="border border-white/40 text-white/80 px-8 py-3.5 text-sm tracking-widest uppercase hover:border-white/70 hover:text-white transition-all">
         Забронювати стіл
       </a>
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 animate-bounce">
-      <span class="text-[#d6d6d6]/30 text-xs">Гортайте</span>
-      <svg class="w-4 h-4 text-[#d6d6d6]/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      <span class="text-[#f0ece4]/25 text-xs tracking-widest uppercase">Гортайте</span>
+      <svg class="w-4 h-4 text-[#f0ece4]/25" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
       </svg>
     </div>
   </div>
 </section>
 
-<!-- About / Info Section -->
+<!-- Info Section -->
 <section class="py-20 px-4">
   <div class="max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/8">
       <!-- Info card 1 -->
-      <div class="bg-[#2d2d2d] rounded-2xl p-8 border border-white/5 hover:border-[#FFA11B]/30 transition-colors group">
-        <div class="w-12 h-12 rounded-xl bg-[#FFA11B]/15 flex items-center justify-center mb-5 group-hover:bg-[#FFA11B]/25 transition-colors">
-          <svg class="w-6 h-6 text-[#FFA11B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      <div class="bg-[#111111] p-10 group hover:bg-[#1a1a1a] transition-colors">
+        <div class="w-10 h-10 border border-[#C8A96E]/40 flex items-center justify-center mb-6 group-hover:border-[#C8A96E] transition-colors">
+          <svg class="w-5 h-5 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
         </div>
-        <h3 class="text-[#d6d6d6] font-bold text-lg mb-2">Години роботи</h3>
-        <p class="text-[#d6d6d6]/60 text-sm leading-relaxed">
+        <h3 class="font-serif text-[#f0ece4] text-lg mb-3">Години роботи</h3>
+        <p class="text-[#f0ece4]/50 text-sm leading-relaxed">
           Відкриті щодня<br>
-          <span class="text-[#d6d6d6]/80 font-medium">08:00 – 22:00</span><br>
+          <span class="text-[#f0ece4]/80">08:00 – 22:00</span><br>
           Кухня: 08:30 – 21:00
         </p>
       </div>
 
       <!-- Info card 2 -->
-      <div class="bg-[#2d2d2d] rounded-2xl p-8 border border-white/5 hover:border-[#FFA11B]/30 transition-colors group">
-        <div class="w-12 h-12 rounded-xl bg-[#FFA11B]/15 flex items-center justify-center mb-5 group-hover:bg-[#FFA11B]/25 transition-colors">
-          <svg class="w-6 h-6 text-[#FFA11B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      <div class="bg-[#111111] p-10 group hover:bg-[#1a1a1a] transition-colors">
+        <div class="w-10 h-10 border border-[#C8A96E]/40 flex items-center justify-center mb-6 group-hover:border-[#C8A96E] transition-colors">
+          <svg class="w-5 h-5 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
         </div>
-        <h3 class="text-[#d6d6d6] font-bold text-lg mb-2">Адреса</h3>
-        <p class="text-[#d6d6d6]/60 text-sm leading-relaxed">
+        <h3 class="font-serif text-[#f0ece4] text-lg mb-3">Адреса</h3>
+        <p class="text-[#f0ece4]/50 text-sm leading-relaxed">
           вул. Соборна, 9<br>
-          <span class="text-[#d6d6d6]/80">Кам'янець-Подільський</span>
+          <span class="text-[#f0ece4]/80">Кам'янець-Подільський</span>
         </p>
       </div>
 
       <!-- Info card 3 -->
-      <div class="bg-[#2d2d2d] rounded-2xl p-8 border border-white/5 hover:border-[#FFA11B]/30 transition-colors group">
-        <div class="w-12 h-12 rounded-xl bg-[#FFA11B]/15 flex items-center justify-center mb-5 group-hover:bg-[#FFA11B]/25 transition-colors">
-          <svg class="w-6 h-6 text-[#FFA11B]" fill="currentColor" viewBox="0 0 24 24">
+      <div class="bg-[#111111] p-10 group hover:bg-[#1a1a1a] transition-colors">
+        <div class="w-10 h-10 border border-[#C8A96E]/40 flex items-center justify-center mb-6 group-hover:border-[#C8A96E] transition-colors">
+          <svg class="w-5 h-5 text-[#C8A96E]" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
           </svg>
         </div>
-        <h3 class="text-[#d6d6d6] font-bold text-lg mb-2">Instagram</h3>
+        <h3 class="font-serif text-[#f0ece4] text-lg mb-3">Instagram</h3>
         <a href="https://instagram.com/lamokka.kp" target="_blank" rel="noopener noreferrer"
-           class="text-[#FFA11B] text-sm hover:underline">&#64;lamokka.kp</a>
-        <p class="text-[#d6d6d6]/60 text-sm mt-1">Підписуйтесь на нас!</p>
+           class="text-[#C8A96E] text-sm hover:underline">&#64;lamokka.kp</a>
+        <p class="text-[#f0ece4]/50 text-sm mt-1">Підписуйтесь на нас</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Feature highlights -->
-<section class="py-16 px-4 bg-[#2d2d2d]/40">
+<section class="py-20 px-4 border-t border-white/5">
   <div class="max-w-7xl mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-[#d6d6d6] mb-3">Чому обирають нас</h2>
-      <p class="text-[#d6d6d6]/60 text-lg">Ми дбаємо про кожну деталь вашого відвідування</p>
+    <div class="text-center mb-16">
+      <p class="text-[#C8A96E] text-xs tracking-[0.4em] uppercase mb-4">Про нас</p>
+      <h2 class="font-serif text-3xl sm:text-4xl text-[#f0ece4] mb-4">Чому обирають нас</h2>
+      <div class="flex items-center justify-center gap-4">
+        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+        <div class="w-1 h-1 rounded-full bg-[#C8A96E]/60"></div>
+        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="text-center p-6">
-        <div class="text-4xl mb-4">☕</div>
-        <h4 class="text-[#d6d6d6] font-semibold mb-2">Авторська кава</h4>
-        <p class="text-[#d6d6d6]/50 text-sm">Відбірні зерна та майстерне приготування</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="flex justify-center mb-5">
+          <svg class="w-8 h-8 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 2a2 2 0 00-2 2v1H4a2 2 0 00-2 2v2a4 4 0 004 4h8a4 4 0 004-4V7a2 2 0 00-2-2h-2V4a2 2 0 00-2-2H8zM6 7h12v2a2 2 0 01-2 2H8a2 2 0 01-2-2V7z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 15v4m4-4v4M7 19h10"/>
+          </svg>
+        </div>
+        <h4 class="font-serif text-[#f0ece4] text-base mb-2">Авторська кава</h4>
+        <p class="text-[#f0ece4]/40 text-sm leading-relaxed">Відбірні зерна та майстерне приготування</p>
       </div>
-      <div class="text-center p-6">
-        <div class="text-4xl mb-4">🍳</div>
-        <h4 class="text-[#d6d6d6] font-semibold mb-2">Свіжі сніданки</h4>
-        <p class="text-[#d6d6d6]/50 text-sm">Тільки свіжі інгредієнти щодня</p>
+      <div class="text-center">
+        <div class="flex justify-center mb-5">
+          <svg class="w-8 h-8 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/>
+          </svg>
+        </div>
+        <h4 class="font-serif text-[#f0ece4] text-base mb-2">Свіжі сніданки</h4>
+        <p class="text-[#f0ece4]/40 text-sm leading-relaxed">Тільки свіжі інгредієнти щодня</p>
       </div>
-      <div class="text-center p-6">
-        <div class="text-4xl mb-4">🌿</div>
-        <h4 class="text-[#d6d6d6] font-semibold mb-2">Затишна атмосфера</h4>
-        <p class="text-[#d6d6d6]/50 text-sm">Ідеальне місце для зустрічей та відпочинку</p>
+      <div class="text-center">
+        <div class="flex justify-center mb-5">
+          <svg class="w-8 h-8 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+          </svg>
+        </div>
+        <h4 class="font-serif text-[#f0ece4] text-base mb-2">Затишна атмосфера</h4>
+        <p class="text-[#f0ece4]/40 text-sm leading-relaxed">Ідеальне місце для зустрічей та відпочинку</p>
       </div>
-      <div class="text-center p-6">
-        <div class="text-4xl mb-4">📍</div>
-        <h4 class="text-[#d6d6d6] font-semibold mb-2">Зручне розташування</h4>
-        <p class="text-[#d6d6d6]/50 text-sm">У самому центрі міста</p>
+      <div class="text-center">
+        <div class="flex justify-center mb-5">
+          <svg class="w-8 h-8 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h4 class="font-serif text-[#f0ece4] text-base mb-2">Зручне розташування</h4>
+        <p class="text-[#f0ece4]/40 text-sm leading-relaxed">У самому центрі міста</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA Banner -->
-<section class="py-20 px-4">
-  <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold text-[#d6d6d6] mb-4">
+<section class="py-20 px-4 border-t border-white/5">
+  <div class="max-w-2xl mx-auto text-center">
+    <p class="text-[#C8A96E] text-xs tracking-[0.4em] uppercase mb-5">Бронювання</p>
+    <h2 class="font-serif text-3xl sm:text-4xl text-[#f0ece4] mb-5">
       Готові до смачного ранку?
     </h2>
-    <p class="text-[#d6d6d6]/60 text-lg mb-8">
+    <p class="text-[#f0ece4]/50 text-base mb-10">
       Забронюйте стіл заздалегідь або просто завітайте до нас
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a routerLink="/reservation"
-         class="bg-[#FFA11B] text-[#232323] px-8 py-3.5 rounded-full font-bold hover:bg-[#e8911a] transition-all hover:scale-105 shadow-lg shadow-[#FFA11B]/25">
+         class="bg-[#C8A96E] text-[#111111] px-8 py-3.5 text-sm tracking-widest uppercase font-bold hover:bg-[#b89558] transition-all">
         Забронювати стіл
       </a>
       <a routerLink="/contact"
-         class="border border-white/20 text-[#d6d6d6] px-8 py-3.5 rounded-full font-medium hover:border-white/40 transition-all">
+         class="border border-white/20 text-[#f0ece4]/70 px-8 py-3.5 text-sm tracking-widest uppercase hover:border-white/40 hover:text-[#f0ece4] transition-all">
         Як нас знайти
       </a>
     </div>

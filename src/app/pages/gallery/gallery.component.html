@@ -1,34 +1,39 @@
-<div class="pt-20 min-h-screen bg-[#232323]">
+<div class="pt-16 min-h-screen">
   <!-- Header -->
-  <div class="bg-gradient-to-b from-[#1a1a1a] to-[#232323] py-16 px-4">
+  <div class="bg-gradient-to-b from-black to-[#111111] py-16 px-4 border-b border-white/5">
     <div class="max-w-7xl mx-auto text-center">
-      <p class="text-[#FFA11B] text-sm font-semibold tracking-[0.3em] uppercase mb-2">La Mokka</p>
-      <h1 class="text-4xl sm:text-5xl font-bold text-[#d6d6d6] mb-4">Галерея</h1>
-      <p class="text-[#d6d6d6]/60 text-lg">Атмосфера, страви та моменти нашого кафе</p>
+      <p class="text-[#C8A96E] text-xs tracking-[0.4em] uppercase mb-4">La Mokka</p>
+      <h1 class="font-serif text-4xl sm:text-5xl text-[#f0ece4] mb-4">Галерея</h1>
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+        <div class="w-1 h-1 rounded-full bg-[#C8A96E]/60"></div>
+        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+      </div>
+      <p class="text-[#f0ece4]/50 text-base">Атмосфера, страви та моменти нашого кафе</p>
     </div>
   </div>
 
   <!-- Gallery Grid -->
   <div class="max-w-7xl mx-auto px-4 py-10">
-    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-3 space-y-3">
       @for (image of images; track image.id) {
         <div
-          class="break-inside-avoid cursor-pointer overflow-hidden rounded-xl border border-white/5 hover:border-[#FFA11B]/40 transition-all group"
+          class="break-inside-avoid cursor-pointer overflow-hidden border border-white/5 hover:border-[#C8A96E]/30 transition-all group"
           (click)="openLightbox(image)">
           <div class="relative overflow-hidden">
             <img
               [src]="image.src"
               [alt]="image.alt"
-              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
               loading="lazy">
-            <div class="absolute inset-0 bg-[#232323]/0 group-hover:bg-[#232323]/30 transition-colors flex items-center justify-center">
-              <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+              <svg class="w-8 h-8 text-[#C8A96E] opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
           </div>
-          <div class="p-3 bg-[#2d2d2d]">
-            <p class="text-[#d6d6d6]/70 text-sm">{{ image.alt }}</p>
+          <div class="px-4 py-3 bg-[#1a1a1a] border-t border-white/5">
+            <p class="text-[#f0ece4]/50 text-xs tracking-wide uppercase">{{ image.alt }}</p>
           </div>
         </div>
       }
@@ -39,15 +44,15 @@
 <!-- Lightbox -->
 @if (lightboxOpen()) {
   <div
-    class="fixed inset-0 z-[100] bg-[#0a0a0a]/95 flex items-center justify-center p-4"
+    class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
     (click)="closeLightbox()">
     <div class="relative max-w-4xl w-full" (click)="$event.stopPropagation()">
       <!-- Close button -->
       <button
         (click)="closeLightbox()"
-        class="absolute -top-12 right-0 text-[#d6d6d6]/70 hover:text-[#d6d6d6] transition-colors p-2">
+        class="absolute -top-12 right-0 text-[#f0ece4]/50 hover:text-[#f0ece4] transition-colors p-2">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
@@ -55,24 +60,24 @@
       <img
         [src]="activeImage()?.src"
         [alt]="activeImage()?.alt"
-        class="w-full max-h-[80vh] object-contain rounded-xl">
+        class="w-full max-h-[80vh] object-contain">
 
       <!-- Caption -->
-      <p class="text-center text-[#d6d6d6]/60 text-sm mt-3">{{ activeImage()?.alt }}</p>
+      <p class="text-center text-[#f0ece4]/40 text-xs mt-3 tracking-widest uppercase">{{ activeImage()?.alt }}</p>
 
       <!-- Navigation -->
       <button
         (click)="navigate('prev')"
-        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-[#2d2d2d] hover:bg-[#FFA11B]/20 border border-white/10 text-[#d6d6d6] p-2.5 rounded-full transition-colors hidden sm:block">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 border border-white/10 bg-[#1a1a1a] hover:border-[#C8A96E]/50 text-[#f0ece4]/70 hover:text-[#C8A96E] p-3 transition-all hidden sm:block">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
       <button
         (click)="navigate('next')"
-        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-[#2d2d2d] hover:bg-[#FFA11B]/20 border border-white/10 text-[#d6d6d6] p-2.5 rounded-full transition-colors hidden sm:block">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 border border-white/10 bg-[#1a1a1a] hover:border-[#C8A96E]/50 text-[#f0ece4]/70 hover:text-[#C8A96E] p-3 transition-all hidden sm:block">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
         </svg>
       </button>
     </div>
