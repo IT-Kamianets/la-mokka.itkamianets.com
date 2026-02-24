@@ -1,39 +1,51 @@
-<div class="pt-16 min-h-screen">
+<div class="pt-[72px] min-h-screen bg-[#0a0a0a]">
+
   <!-- Header -->
-  <div class="bg-gradient-to-b from-black to-[#111111] py-16 px-4 border-b border-white/5">
-    <div class="max-w-7xl mx-auto text-center">
-      <p class="text-[#C8A96E] text-xs tracking-[0.4em] uppercase mb-4">La Mokka</p>
-      <h1 class="font-serif text-4xl sm:text-5xl text-[#f0ece4] mb-4">Галерея</h1>
-      <div class="flex items-center justify-center gap-4 mb-4">
-        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
-        <div class="w-1 h-1 rounded-full bg-[#C8A96E]/60"></div>
-        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+  <div class="relative py-20 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] to-[#0a0a0a]"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[400px] h-24 bg-[#C8A96E]/[0.04] blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-7xl mx-auto text-center">
+      <p class="text-[#C8A96E]/70 text-[10px] tracking-[0.5em] uppercase mb-6 font-light">La Mokka</p>
+      <h1 class="font-display text-5xl sm:text-6xl font-light italic text-[#f0ece4] mb-6 leading-none">
+        Галерея
+      </h1>
+      <div class="flex items-center justify-center gap-5 mb-6">
+        <div class="h-px w-16 bg-gradient-to-r from-transparent to-[#C8A96E]/40"></div>
+        <div class="w-1 h-1 bg-[#C8A96E]/60 rotate-45 shrink-0"></div>
+        <div class="h-px w-16 bg-gradient-to-l from-transparent to-[#C8A96E]/40"></div>
       </div>
-      <p class="text-[#f0ece4]/50 text-base">Атмосфера, страви та моменти нашого кафе</p>
+      <p class="text-[#f0ece4]/35 text-sm font-light tracking-wide">Атмосфера, страви та моменти нашого кафе</p>
     </div>
   </div>
 
   <!-- Gallery Grid -->
-  <div class="max-w-7xl mx-auto px-4 py-10">
-    <div class="columns-1 sm:columns-2 lg:columns-3 gap-3 space-y-3">
+  <div class="max-w-7xl mx-auto px-4 pb-20">
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-px space-y-px">
       @for (image of images; track image.id) {
         <div
-          class="break-inside-avoid cursor-pointer overflow-hidden border border-white/5 hover:border-[#C8A96E]/30 transition-all group"
+          class="break-inside-avoid cursor-pointer overflow-hidden group bg-[#0a0a0a] hover:bg-[#111111] transition-colors duration-500"
           (click)="openLightbox(image)">
           <div class="relative overflow-hidden">
             <img
               [src]="image.src"
               [alt]="image.alt"
-              class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+              class="w-full h-auto object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out brightness-85 group-hover:brightness-100"
               loading="lazy">
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-              <svg class="w-8 h-8 text-[#C8A96E] opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-              </svg>
+            <!-- Hover overlay -->
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-500 flex items-center justify-center">
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-[#C8A96E]/50 p-3">
+                <svg class="w-4 h-4 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+              </div>
             </div>
           </div>
-          <div class="px-4 py-3 bg-[#1a1a1a] border-t border-white/5">
-            <p class="text-[#f0ece4]/50 text-xs tracking-wide uppercase">{{ image.alt }}</p>
+          <!-- Caption -->
+          <div class="px-4 py-3 border-t border-[#C8A96E]/[0.08] flex items-center justify-between gap-2">
+            <p class="text-[#f0ece4]/40 text-xs font-light">{{ image.alt }}</p>
+            <span class="shrink-0 text-[#C8A96E]/35 text-[9px] tracking-[0.3em] uppercase font-light">
+              {{ image.category === 'drinks' ? 'Напій' : 'Страва' }}
+            </span>
           </div>
         </div>
       }
@@ -44,15 +56,16 @@
 <!-- Lightbox -->
 @if (lightboxOpen()) {
   <div
-    class="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+    class="fixed inset-0 z-[100] bg-black/97 flex items-center justify-center p-4"
     (click)="closeLightbox()">
     <div class="relative max-w-4xl w-full" (click)="$event.stopPropagation()">
+
       <!-- Close button -->
       <button
         (click)="closeLightbox()"
-        class="absolute -top-12 right-0 text-[#f0ece4]/50 hover:text-[#f0ece4] transition-colors p-2">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+        class="absolute -top-14 right-0 text-[#f0ece4]/30 hover:text-[#C8A96E] transition-colors duration-300 p-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"/>
         </svg>
       </button>
 
@@ -63,19 +76,19 @@
         class="w-full max-h-[80vh] object-contain">
 
       <!-- Caption -->
-      <p class="text-center text-[#f0ece4]/40 text-xs mt-3 tracking-widest uppercase">{{ activeImage()?.alt }}</p>
+      <p class="text-center text-[#f0ece4]/25 text-[10px] mt-5 tracking-[0.4em] uppercase font-light">{{ activeImage()?.alt }}</p>
 
       <!-- Navigation -->
       <button
         (click)="navigate('prev')"
-        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 border border-white/10 bg-[#1a1a1a] hover:border-[#C8A96E]/50 text-[#f0ece4]/70 hover:text-[#C8A96E] p-3 transition-all hidden sm:block">
+        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 border border-white/[0.08] bg-[#111111] hover:border-[#C8A96E]/40 text-[#f0ece4]/40 hover:text-[#C8A96E] p-3 transition-all duration-300 hidden sm:flex items-center justify-center">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
       <button
         (click)="navigate('next')"
-        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 border border-white/10 bg-[#1a1a1a] hover:border-[#C8A96E]/50 text-[#f0ece4]/70 hover:text-[#C8A96E] p-3 transition-all hidden sm:block">
+        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 border border-white/[0.08] bg-[#111111] hover:border-[#C8A96E]/40 text-[#f0ece4]/40 hover:text-[#C8A96E] p-3 transition-all duration-300 hidden sm:flex items-center justify-center">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
         </svg>

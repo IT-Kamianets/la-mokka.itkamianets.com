@@ -7,13 +7,18 @@ module.exports = {
     extend: {
       colors: {
         accent: '#C8A96E',
-        'dark-bg': '#111111',
-        'card-bg': '#1a1a1a',
+        'dark-bg': '#0a0a0a',
+        'card-bg': '#161616',
         'text-main': '#f0ece4',
       },
       fontFamily: {
         sans: ['Oxygen', 'sans-serif'],
         serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        display: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
+      },
+      letterSpacing: {
+        'ultra': '0.35em',
+        'widest': '0.2em',
       },
     },
   },

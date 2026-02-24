@@ -4,11 +4,88 @@
 
 /* Google Fonts loaded via index.html */
 body {
-  background-color: #111111;
+  background-color: #0a0a0a;
   color: #f0ece4;
   font-family: 'Oxygen', sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Premium thin gold scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 169, 110, 0.25);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 169, 110, 0.5);
+}
+
+/* Text selection color */
+::selection {
+  background: rgba(200, 169, 110, 0.2);
+  color: #f0ece4;
+}
+
+/* Scrollbar-none utility */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Grain / paper texture overlay */
+.grain-texture {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 250px 250px;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* Fade-in-up entrance animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-fade {
+  opacity: 0;
+  animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.anim-d0   { animation-delay: 0ms; }
+.anim-d150 { animation-delay: 150ms; }
+.anim-d300 { animation-delay: 300ms; }
+.anim-d450 { animation-delay: 450ms; }
+.anim-d600 { animation-delay: 620ms; }
+
+/* Nav link animated underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #C8A96E;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }

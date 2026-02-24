@@ -1,29 +1,57 @@
-<div class="pt-16 min-h-screen">
+<div class="pt-[72px] min-h-screen bg-[#0a0a0a]">
+
   <!-- Page Header -->
-  <div class="bg-gradient-to-b from-black to-[#111111] py-16 px-4 border-b border-white/5">
-    <div class="max-w-7xl mx-auto text-center">
-      <p class="text-[#C8A96E] text-xs tracking-[0.4em] uppercase mb-4">La Mokka</p>
-      <h1 class="font-serif text-4xl sm:text-5xl text-[#f0ece4] mb-4">Наше меню</h1>
-      <div class="flex items-center justify-center gap-4 mb-4">
-        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
-        <div class="w-1 h-1 rounded-full bg-[#C8A96E]/60"></div>
-        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+  <div class="relative py-24 px-4 overflow-hidden">
+    <!-- Base gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#0a0a0a] to-[#0a0a0a]"></div>
+    <!-- Grain / paper texture -->
+    <div class="grain-texture absolute inset-0 pointer-events-none"></div>
+    <!-- Parallax warm glow — moves slower than scroll -->
+    <div
+      class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[600px] h-52 bg-[#C8A96E]/[0.06] blur-[80px] pointer-events-none transition-none"
+      [style.transform]="'translateX(-50%) translateY(' + (scrollY() * 0.28) + 'px)'">
+    </div>
+    <!-- Top vignette -->
+    <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto text-center">
+      <p class="anim-fade anim-d0 text-[#C8A96E]/60 text-[10px] tracking-[0.55em] uppercase mb-7 font-light">
+        La Mokka
+      </p>
+      <h1 class="anim-fade anim-d150 font-display text-5xl sm:text-6xl font-light italic text-[#f0ece4] mb-7 leading-none">
+        Наше меню
+      </h1>
+      <div class="anim-fade anim-d300 flex items-center justify-center gap-5 mb-7">
+        <div class="h-px w-16 bg-gradient-to-r from-transparent to-[#C8A96E]/40"></div>
+        <div class="w-1 h-1 bg-[#C8A96E]/60 rotate-45 shrink-0"></div>
+        <div class="h-px w-16 bg-gradient-to-l from-transparent to-[#C8A96E]/40"></div>
       </div>
-      <p class="text-[#f0ece4]/50 text-base">Авторські страви з якісних інгредієнтів</p>
+      <p class="anim-fade anim-d450 text-[#f0ece4]/30 text-sm font-light tracking-wide mb-8">
+        Авторські страви з якісних інгредієнтів
+      </p>
+      <!-- Breakfast accent badge -->
+      <div class="anim-fade anim-d600 flex justify-center">
+        <div class="inline-flex items-center gap-2.5 border border-[#C8A96E]/15 px-5 py-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#C8A96E]/50 animate-pulse shrink-0"></span>
+          <span class="text-[#C8A96E]/45 text-[10px] tracking-[0.35em] uppercase font-light">
+            Сніданки подаємо до 21:00
+          </span>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Tab Navigation -->
-  <div class="sticky top-16 z-40 bg-[#111111]/95 backdrop-blur-md border-b border-white/8">
+  <div class="sticky top-[72px] z-40 bg-[#0a0a0a]/97 backdrop-blur-md border-b border-white/[0.06]">
     <div class="max-w-7xl mx-auto px-4">
-      <div class="flex gap-6 py-0">
+      <div class="flex gap-0 scrollbar-none overflow-x-auto">
         @for (tab of tabs; track tab.key) {
           <button
             (click)="setTab(tab.key)"
             [class]="activeTab() === tab.key
-              ? 'border-b-2 border-[#C8A96E] text-[#C8A96E]'
-              : 'border-b-2 border-transparent text-[#f0ece4]/50 hover:text-[#f0ece4]'"
-            class="px-2 py-4 text-sm tracking-widest uppercase transition-all">
+              ? 'text-[#C8A96E] border-b border-[#C8A96E]'
+              : 'text-[#f0ece4]/40 border-b border-transparent hover:text-[#f0ece4]/70'"
+            class="shrink-0 px-6 py-5 text-[11px] tracking-[0.3em] uppercase font-light transition-all duration-300 whitespace-nowrap">
             {{ tab.label }}
           </button>
         }
@@ -32,37 +60,54 @@
   </div>
 
   <!-- Menu Items Grid -->
-  <div class="max-w-7xl mx-auto px-4 py-10">
+  <div class="max-w-7xl mx-auto px-4 py-12">
     @if (isLoading()) {
-      <div class="flex justify-center py-20">
-        <div class="w-8 h-8 border border-[#C8A96E] border-t-transparent rounded-full animate-spin"></div>
+      <div class="flex flex-col items-center justify-center py-32 gap-4">
+        <div class="w-6 h-6 border border-[#C8A96E]/40 border-t-[#C8A96E] rounded-full animate-spin"></div>
+        <p class="text-[#f0ece4]/25 text-xs tracking-[0.3em] uppercase">Завантаження</p>
       </div>
     } @else {
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
         @for (item of filteredItems(); track item.id) {
-          <article class="bg-[#111111] hover:bg-[#1a1a1a] transition-colors group">
+          <article class="bg-[#0a0a0a] hover:bg-[#111111] transition-colors duration-500 group">
             <!-- Image -->
-            <div class="relative overflow-hidden h-52">
+            <div class="relative overflow-hidden h-56">
               <img
                 [src]="item.image"
                 [alt]="item.name"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                class="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
                 loading="lazy"
                 onerror="this.src='https://picsum.photos/seed/food/400/300'">
+              <!-- Top gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent"></div>
               <!-- Prep time badge -->
-              <span class="absolute top-3 right-3 bg-[#111111]/80 backdrop-blur-sm text-[#f0ece4]/70 text-xs px-2.5 py-1">
+              <span class="absolute top-3 right-3 bg-[#0a0a0a]/70 backdrop-blur-sm text-[#f0ece4]/50 text-[10px] px-2.5 py-1 tracking-widest uppercase">
                 {{ item.prepTime }}
               </span>
             </div>
 
-            <!-- Content -->
-            <div class="p-5 border-t border-white/5">
-              <h3 class="font-serif text-[#f0ece4] text-base mb-2 leading-snug">{{ item.name }}</h3>
-              <p class="text-[#f0ece4]/45 text-sm leading-relaxed mb-5">{{ item.description }}</p>
+            <!-- Gold separator line -->
+            <div class="h-px bg-gradient-to-r from-[#C8A96E]/30 via-[#C8A96E]/10 to-transparent"></div>
 
-              <div class="flex items-center justify-between">
-                <span class="text-[#f0ece4]/30 text-xs">{{ item.weight }}</span>
-                <span class="text-[#C8A96E] font-semibold text-lg">{{ item.price }} ₴</span>
+            <!-- Content -->
+            <div class="p-5 pb-6">
+              <h3 class="font-display text-[#f0ece4]/90 text-lg font-light mb-2 leading-snug">{{ item.name }}</h3>
+              <p class="text-[#f0ece4]/35 text-sm leading-relaxed mb-6 font-light">{{ item.description }}</p>
+
+              <div class="flex items-end justify-between">
+                <span class="text-[#f0ece4]/20 text-xs tracking-wider">{{ item.weight }}</span>
+                @if (item.sizes && item.sizes.length > 0) {
+                  <div class="flex items-center gap-3">
+                    @for (size of item.sizes; track size.label) {
+                      <span class="flex flex-col items-center gap-0.5">
+                        <span class="text-[#f0ece4]/25 text-[9px] uppercase tracking-[0.25em]">{{ size.label }}</span>
+                        <span class="text-[#C8A96E] font-light text-base leading-none">{{ size.price }} ₴</span>
+                      </span>
+                    }
+                  </div>
+                } @else {
+                  <span class="text-[#C8A96E] font-light text-lg">{{ item.price }} ₴</span>
+                }
               </div>
             </div>
           </article>
@@ -70,23 +115,26 @@
       </div>
 
       @if (filteredItems().length === 0) {
-        <div class="text-center py-20 text-[#f0ece4]/30">
-          <p class="font-serif text-xl mb-2">Розділ поповнюється</p>
-          <p class="text-sm">Скоро тут з'являться нові страви</p>
+        <div class="flex flex-col items-center py-32 gap-4">
+          <div class="w-px h-12 bg-gradient-to-b from-transparent to-[#C8A96E]/30"></div>
+          <p class="font-display text-2xl font-light italic text-[#f0ece4]/20">Розділ поповнюється</p>
+          <p class="text-[#f0ece4]/15 text-xs tracking-[0.3em] uppercase font-light">Скоро тут з'являться нові страви</p>
+          <div class="w-px h-12 bg-gradient-to-t from-transparent to-[#C8A96E]/30"></div>
         </div>
       }
     }
   </div>
 
   <!-- Hours note -->
-  <div class="max-w-7xl mx-auto px-4 pb-16">
-    <div class="border border-[#C8A96E]/20 p-5 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-      <svg class="w-4 h-4 text-[#C8A96E] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div class="max-w-7xl mx-auto px-4 pb-20">
+    <div class="flex items-center gap-4 border-l border-[#C8A96E]/25 pl-5">
+      <svg class="w-3.5 h-3.5 text-[#C8A96E]/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
-      <p class="text-[#f0ece4]/60 text-sm">
-        <span class="text-[#C8A96E]">Сніданки подаються:</span> щодня з 08:30 до 21:00
+      <p class="text-[#f0ece4]/35 text-sm font-light">
+        <span class="text-[#C8A96E]/80">Сніданки</span>&ensp;щодня з 08:30 до 21:00
       </p>
     </div>
   </div>
+
 </div>

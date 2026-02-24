@@ -1,56 +1,60 @@
 <header
-  [class]="isScrolled() ? 'bg-[#0d0d0d]/95 backdrop-blur-md shadow-lg shadow-black/50' : 'bg-transparent'"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  [class]="isScrolled() ? 'bg-[#0a0a0a]/96 backdrop-blur-md shadow-[0_1px_0_rgba(200,169,110,0.08)]' : 'bg-transparent'"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-16">
+    <div class="flex items-center justify-between h-[72px]">
+
       <!-- Logo -->
-      <a routerLink="/" (click)="closeMenu()" class="flex items-center gap-3 group">
-        <div class="ring-1 ring-[#C8A96E]/50 rounded-full p-0.5 transition-all group-hover:ring-[#C8A96E]/80">
+      <a routerLink="/" (click)="closeMenu()" class="flex items-center gap-3.5 group">
+        <div class="ring-1 ring-[#C8A96E]/40 rounded-full p-0.5 transition-all duration-300 group-hover:ring-[#C8A96E]/70">
           <img src="https://cdn-media.choiceqr.com/prod-eat-la-mokka/logo/thumbnail_QOqhcjT-pcGqobt-BeFGHOS_L-D-L.png"
                alt="La Mokka"
-               class="w-7 h-7 rounded-full object-cover brightness-125 transition-transform group-hover:scale-105">
+               class="w-8 h-8 rounded-full object-cover brightness-110 transition-transform duration-300 group-hover:scale-105">
         </div>
-        <span class="font-serif text-[#f0ece4] font-semibold text-lg tracking-wide group-hover:text-[#C8A96E] transition-colors">
-          La Mokka
-        </span>
+        <div class="flex flex-col leading-none">
+          <span class="font-display text-[#f0ece4] font-light text-xl tracking-widest transition-colors duration-300 group-hover:text-[#C8A96E]">
+            La Mokka
+          </span>
+          <span class="text-[#C8A96E]/60 text-[9px] tracking-[0.45em] uppercase font-light mt-0.5">
+            Brunch Café
+          </span>
+        </div>
       </a>
 
       <!-- Desktop Nav -->
-      <div class="hidden md:flex items-center gap-8">
-        <a routerLink="/menu" routerLinkActive="text-[#C8A96E]"
-           class="text-[#f0ece4]/70 hover:text-[#C8A96E] transition-colors text-sm tracking-widest uppercase">
+      <div class="hidden md:flex items-center gap-10">
+        <a routerLink="/" routerLinkActive="text-[#C8A96E] nav-link active" [routerLinkActiveOptions]="{exact: true}"
+           class="nav-link text-[#f0ece4]/55 hover:text-[#C8A96E] transition-colors duration-300 text-[11px] tracking-[0.3em] uppercase font-light">
           Меню
         </a>
-        <a routerLink="/gallery" routerLinkActive="text-[#C8A96E]"
-           class="text-[#f0ece4]/70 hover:text-[#C8A96E] transition-colors text-sm tracking-widest uppercase">
+        <span class="w-px h-3 bg-[#C8A96E]/20"></span>
+        <a routerLink="/gallery" routerLinkActive="text-[#C8A96E] nav-link active"
+           class="nav-link text-[#f0ece4]/55 hover:text-[#C8A96E] transition-colors duration-300 text-[11px] tracking-[0.3em] uppercase font-light">
           Галерея
         </a>
-        <a routerLink="/contact" routerLinkActive="text-[#C8A96E]"
-           class="text-[#f0ece4]/70 hover:text-[#C8A96E] transition-colors text-sm tracking-widest uppercase">
+        <span class="w-px h-3 bg-[#C8A96E]/20"></span>
+        <a routerLink="/contact" routerLinkActive="text-[#C8A96E] nav-link active"
+           class="nav-link text-[#f0ece4]/55 hover:text-[#C8A96E] transition-colors duration-300 text-[11px] tracking-[0.3em] uppercase font-light">
           Контакти
-        </a>
-        <a routerLink="/reservation"
-           class="border border-[#C8A96E] text-[#C8A96E] px-5 py-1.5 text-sm tracking-widest uppercase hover:bg-[#C8A96E] hover:text-[#111111] transition-all">
-          Бронювання
         </a>
       </div>
 
       <!-- Mobile Hamburger -->
       <button
         (click)="toggleMenu()"
-        class="md:hidden flex flex-col gap-1.5 p-2 hover:opacity-70 transition-opacity"
+        class="md:hidden flex flex-col gap-[5px] p-2 hover:opacity-70 transition-opacity"
         [attr.aria-label]="isMenuOpen() ? 'Закрити меню' : 'Відкрити меню'">
         <span
-          [class]="isMenuOpen() ? 'rotate-45 translate-y-2' : ''"
-          class="block w-6 h-0.5 bg-[#f0ece4] transition-all duration-300">
+          [class]="isMenuOpen() ? 'rotate-45 translate-y-[7px]' : ''"
+          class="block w-5 h-px bg-[#f0ece4] transition-all duration-300">
         </span>
         <span
-          [class]="isMenuOpen() ? 'opacity-0' : ''"
-          class="block w-6 h-0.5 bg-[#f0ece4] transition-all duration-300">
+          [class]="isMenuOpen() ? 'opacity-0 scale-x-0' : ''"
+          class="block w-5 h-px bg-[#f0ece4] transition-all duration-300">
         </span>
         <span
-          [class]="isMenuOpen() ? '-rotate-45 -translate-y-2' : ''"
-          class="block w-6 h-0.5 bg-[#f0ece4] transition-all duration-300">
+          [class]="isMenuOpen() ? '-rotate-45 -translate-y-[7px]' : ''"
+          class="block w-5 h-px bg-[#f0ece4] transition-all duration-300">
         </span>
       </button>
     </div>
@@ -58,26 +62,20 @@
     <!-- Mobile Menu -->
     <div
       [class]="isMenuOpen() ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'"
-      class="md:hidden overflow-hidden transition-all duration-300 bg-[#0d0d0d] border-t border-white/5">
-      <div class="flex flex-col py-4 gap-1">
-        <a routerLink="/menu" routerLinkActive="text-[#C8A96E]" (click)="closeMenu()"
-           class="text-[#f0ece4]/70 hover:text-[#C8A96E] px-6 py-3 text-sm tracking-widest uppercase transition-colors">
+      class="md:hidden overflow-hidden transition-all duration-400 border-t border-[#C8A96E]/8">
+      <div class="flex flex-col py-5 gap-0 bg-[#0a0a0a]">
+        <a routerLink="/" routerLinkActive="text-[#C8A96E]" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()"
+           class="text-[#f0ece4]/55 hover:text-[#C8A96E] px-6 py-4 text-[11px] tracking-[0.3em] uppercase font-light transition-colors border-b border-white/[0.04]">
           Меню
         </a>
         <a routerLink="/gallery" routerLinkActive="text-[#C8A96E]" (click)="closeMenu()"
-           class="text-[#f0ece4]/70 hover:text-[#C8A96E] px-6 py-3 text-sm tracking-widest uppercase transition-colors">
+           class="text-[#f0ece4]/55 hover:text-[#C8A96E] px-6 py-4 text-[11px] tracking-[0.3em] uppercase font-light transition-colors border-b border-white/[0.04]">
           Галерея
         </a>
         <a routerLink="/contact" routerLinkActive="text-[#C8A96E]" (click)="closeMenu()"
-           class="text-[#f0ece4]/70 hover:text-[#C8A96E] px-6 py-3 text-sm tracking-widest uppercase transition-colors">
+           class="text-[#f0ece4]/55 hover:text-[#C8A96E] px-6 py-4 text-[11px] tracking-[0.3em] uppercase font-light transition-colors">
           Контакти
         </a>
-        <div class="px-6 pt-2 pb-2">
-          <a routerLink="/reservation" (click)="closeMenu()"
-             class="block text-center border border-[#C8A96E] text-[#C8A96E] px-5 py-2.5 text-sm tracking-widest uppercase hover:bg-[#C8A96E] hover:text-[#111111] transition-all">
-            Бронювання
-          </a>
-        </div>
       </div>
     </div>
   </nav>

@@ -28,6 +28,16 @@
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "menu.json",
+                "input": ".",
+                "output": "/"
+              },
+              {
+                "glob": "drinks.json",
+                "input": ".",
+                "output": "/"
               }
             ],
             "styles": [

@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin, map } from 'rxjs';
 import { MenuItem } from '../models/menu-item.model';
 
 @Injectable({ providedIn: 'root' })
@@ -8,6 +8,11 @@ export class MenuService {
   private http = inject(HttpClient);
 
   getMenuItems(): Observable<MenuItem[]> {
-    return this.http.get<MenuItem[]>('assets/data/menu.json');
+    return forkJoin([
+      this.http.get<MenuItem[]>('menu.json'),
+      this.http.get<MenuItem[]>('drinks.json'),
+    ]).pipe(
+      map(([menu, drinks]) => [...menu, ...drinks])
+    );
   }
 }

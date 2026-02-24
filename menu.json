@@ -1,444 +1,703 @@
-﻿{
-  "categories": [
-    {
-      "category": "САЛАТИ",
-      "products": [
-        {
-          "slug": "tepliy-salat-z-telyatinoyu-sirom-feta-i-baklazhanami",
-          "title": "Теплий салат з телятиною, сиром фета і баклажанами",
-          "price": 220,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/fywilIt-EhmtYCb-IqzOfwH.jpeg"
-        },
-        {
-          "slug": "cezar-z-krevetkoyu",
-          "title": "Цезар з креветкою",
-          "price": 220,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/QbDHXGk-UxUuBge-FfaHVSe_prepare.jpeg"
-        },
-        {
-          "slug": "salat-cezar",
-          "title": "Салат \"Цезар\"",
-          "price": 200,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FFJITrq-GXIphLj-IXEtzDH.jpeg"
-        },
-        {
-          "slug": "salat-z-lososem-apelsinom-i-avokado-248",
-          "title": "Салат з лососем , апельсином і авокадо",
-          "price": 210,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DIObJQH-VrnStAw-PUFijBI_prepare.jpeg"
-        },
-        {
-          "slug": "salat-z-tuncem-i-avokado",
-          "title": "Салат з тунцем і авокадо",
-          "price": 210,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/xzCFHsJ-UwegFgI-ulHnKBA.jpeg"
-        },
-        {
-          "slug": "salat-sitiy-vegetarianec",
-          "title": "Салат ситий вегетаріанець",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/cDJiSMQ-viLnWTt-MoIrkek.jpeg"
-        },
-        {
-          "slug": "salat-greckiy",
-          "title": "Салат грецький",
-          "price": 180,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/MvbQGDr-ejCGFHV-AGwueAU.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "КРУАСАНИ-ГРИЛЬ",
-      "products": [
-        {
-          "slug": "kruasan-z-lososem-ta-svizhimi-ovochami",
-          "title": "Круасан з лососем та свіжими овочами",
-          "price": 160,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/qllJtCV-JRGfmMM-fFjSZLh.jpeg"
-        },
-        {
-          "slug": "kruasan-cezar-z-kurkoyu",
-          "title": "Круасан Цезар з куркою",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/EcgBcth-lcqQIye-yADXrKJ_prepare.jpeg"
-        },
-        {
-          "slug": "kruasan-z-tuncem-ta-limonnim-sousom",
-          "title": "Круасан з тунцем та лимонним соусом",
-          "price": 140,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/UNHiKcb-whPRCaY-IJVrqlP.jpeg"
-        },
-        {
-          "slug": "kruasan-z-tomatami-mocareloyu-i-pesto",
-          "title": "Круасан з томатами, моцарелою і песто",
-          "price": 120,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lmmKLJe-HtPfBEq-FJDwFTF.jpeg"
-        },
-        {
-          "slug": "kruasan-z-karamelizovanoyu-grusheyu-dor-blyu-ta-gorihami",
-          "title": "Круасан з карамелізованою грушею, дор блю та горіхами",
-          "price": 130,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uFcZGJH-lBnFTsi-xlSoZZS.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "БУРГЕРИ І ХОТДОГИ",
-      "products": [
-        {
-          "slug": "burger-brooklyn-bacon-svitla-bulka",
-          "title": "Бургер Brooklyn Bacon (світла булка)",
-          "price": 250,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/TlFhFrI-eeZXHIW-PcDnOlB.jpeg"
-        },
-        {
-          "slug": "burger-brooklyn-bacon-temna-bulka",
-          "title": "Бургер Brooklyn Bacon (темна булка)",
-          "price": 250,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/VlpExyd-eXkllet-IscXtlD.jpeg"
-        },
-        {
-          "slug": "burger-new-yorker",
-          "title": "Бургер New Yorker",
-          "price": 220,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HPIjDTD-ukcrSDj-qMYxDxY.jpeg"
-        },
-        {
-          "slug": "burger-pastrami-temna-bulka",
-          "title": "Бургер Pastrami (темна булка)",
-          "price": 200,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lQNgjFP-NaLBnSA-eMPROyP.jpeg"
-        },
-        {
-          "slug": "burger-pastrami-svitla-bulka",
-          "title": "Бургер Pastrami (світла булка)",
-          "price": 200,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/GiXpaob-siylGwR-cwMSNRF.jpeg"
-        },
-        {
-          "slug": "burger-cheeseburger-standard",
-          "title": "Бургер Cheeseburger Standard",
-          "price": 175,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/tGLblDW-ezklqGJ-bVsrAIm.jpeg"
-        },
-        {
-          "slug": "kids-burger-z-kotletoyu-z-indichki",
-          "title": "KIDS бургер з котлетою з індички",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/nXGKzCK-ADQXSZJ-AGRnFbx.jpeg"
-        },
-        {
-          "slug": "panini-z-shinkoyu",
-          "title": "Паніні з шинкою",
-          "price": 110,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/tTFGaIm-rmiNlIY-qtCBeOD_prepare.png"
-        },
-        {
-          "slug": "pita-z-kurkoyu",
-          "title": "Піта з куркою",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/elFPFHs-yXDsWaT-qIOCCRc.jpeg"
-        },
-        {
-          "slug": "kraftoviy-hot-dog-z-karamelizovanim-bekonom-i-sirom-chedder-285",
-          "title": "Крафтовий хот-дог з карамелізованим беконом і сиром Чеддер",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uLbAEji-veXgGbK-doFRBOw.jpeg"
-        },
-        {
-          "slug": "amerikanskiy-hot-dog-z-molochnoyu-sosiskoyu",
-          "title": "Американський хот-дог з молочною сосискою",
-          "price": 90,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DWIONfK-NkKfDzi-lMZFMeI.jpeg"
-        },
-        {
-          "slug": "francuzkiy-hot-dog-z-bavarskoyu-sosiskoyu-233",
-          "title": "Французкий хот-дог з баварською сосискою",
-          "price": 85,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/gYljBEI-IJdHaqY-FJDDrsY.jpeg"
-        },
-        {
-          "slug": "francuzkiy-hot-dog-z-molochnoyu-sosiskoyu",
-          "title": "Французький хот-дог з молочною сосискою",
-          "price": 75,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HmBIDxO-yoJyFCW-BqRBDIT.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "ФАСТ-ФУД",
-      "products": [
-        {
-          "slug": "kartoplya-fri-z-ketchupom",
-          "title": "Картопля фрі з кетчупом",
-          "price": 65,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/tfFleje-qCeoMCD-WpaGyrq.jpeg"
-        },
-        {
-          "slug": "kartoplyani-dipi",
-          "title": "Картопляні діпи",
-          "price": 80,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/XLWqbRX-TrZSyjo-xvbxPsT.jpeg"
-        },
-        {
-          "slug": "kartoplyani-kulki-z-smetanno-chasnikovim-sousom",
-          "title": "Картопляні кульки з сметанно-часниковим соусом",
-          "price": 80,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/AfzsHHI-kVOSSqU-aKbVSYs.jpeg"
-        },
-        {
-          "slug": "nagetsi-z-sirnim-sousom",
-          "title": "Нагетси з сирним соусом",
-          "price": 100,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/ebGbmpB-awOJFJh-yXXJZGd.jpeg"
-        },
-        {
-          "slug": "sirni-palichki-z-yagidnim-sousom",
-          "title": "Сирні палички з ягідним соусом",
-          "price": 140,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DzuQaqd-FejypDi-IkHReIe.jpeg"
-        },
-        {
-          "slug": "mocarela-fri-z-sousom-z-zhuravlini",
-          "title": "Моцарела фрі з соусом з журавлини",
-          "price": 180,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HJbktFT-hDfINlj-WfNMKCn.jpeg"
-        },
-        {
-          "slug": "krevetki-fri-z-gostro-solodkim-sousom",
-          "title": "Креветки фрі з гостро-солодким соусом",
-          "price": 260,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/WCCSBsn-BaFdduA-WfXeSjk.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "СУПИ",
-      "products": [
-        {
-          "slug": "norvezkiy-sup-z-lososem-nayavnist-utochnyuyte-u-oficianta",
-          "title": "Норвезький суп з лососем ❗(наявність уточнюйте у офіціанта)",
-          "price": 130,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/GwrEDvb-zHDDICH-CCncUQV.jpeg"
-        },
-        {
-          "slug": "sirniy-sup-z-indichkoyu-ta-ovochami-nayavnist-utochnyuyte-u-oficianta",
-          "title": "Сирний суп з індичкою та овочами ❗(наявність уточнюйте у офіціанта)",
-          "price": 130,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/grSqrRd-YaxKToV-ffEqmkk.jpeg"
-        },
-        {
-          "slug": "krem-sup-z-garbuza-ta-chipsami-kopchenogo-bekonu",
-          "title": "Крем-суп з гарбуза та чіпсами копченого бекону",
-          "price": 140,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/OtFreDN-ttOJARF-LbIlCni_prepare.jpeg"
-        },
-        {
-          "slug": "sirniy-krem-sup-z-kukurudzoyu-nayavnist-utochnyuyte-u-oficianta",
-          "title": "Сирний крем-суп з кукурудзою ❗(наявність уточнюйте у офіціанта)",
-          "price": 130,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/ZAoGVld-UIdHfwX-PyWGeOM.jpeg"
-        },
-        {
-          "slug": "bograch",
-          "title": "Бограч",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/oxmIgeo-cvtkyJY-DeQNXJu_prepare.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "ПАСТИ",
-      "products": [
-        {
-          "slug": "pasta-karbonara",
-          "title": "Паста Карбонара",
-          "price": 190,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/IkzOIbe-cOOHKDb-HRcxPqd.jpeg"
-        },
-        {
-          "slug": "pasta-z-m-yasom-pastrami-ta-sousom-z-tomativ",
-          "title": "Паста з м\u0027ясом пастрамі та соусом з томатів",
-          "price": 190,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/kPGDyzC-YUnxiHD-gblkIPK.jpeg"
-        },
-        {
-          "slug": "pasta-z-telyatinoyu-pesto-i-bilimi-gribami",
-          "title": "Паста з телятиною, песто і білими грибами",
-          "price": 230,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HVUcsJQ-KQryVHm-JdFnDej.jpeg"
-        },
-        {
-          "slug": "pasta-z-indichkoyu-i-bilimi-gribami",
-          "title": "Паста з індичкою і білими грибами",
-          "price": 230,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/GNcyGHe-lFkRcDF-rZLimdA.jpeg"
-        },
-        {
-          "slug": "pasta-alfredo-z-tuncem-i-limonnim-sousom",
-          "title": "Паста Альфредо з тунцем і лимонним соусом",
-          "price": 230,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/legQQIL-AopBLZG-bmJUbLT.jpeg"
-        },
-        {
-          "slug": "pasta-z-lososem-zelenim-goroshkom-i-sousom-bisk",
-          "title": "Паста з лососем , зеленим горошком і соусом Біск",
-          "price": 240,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/PztIAMU-cgLHaJx-vSReFlJ.jpeg"
-        },
-        {
-          "slug": "pasta-z-moreproduktami-i-limonnim-sousom",
-          "title": "Паста з морепродуктами і лимонним соусом",
-          "price": 250,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/yHAnMHW-JpOmFPq-bxmoRfD.jpeg"
-        },
-        {
-          "slug": "pasta-bolonieze",
-          "title": "Паста Болоньєзе",
-          "price": 170,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/LhAfOGK-JDlfpyZ-pmvFvln_prepare.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "ОСНОВНІ СТРАВИ",
-      "products": [
-        {
-          "slug": "file-indichki-z-ovochami-ta-olivkami",
-          "title": "Філе індички з овочами та оливками",
-          "price": 260,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/xPixOjX-xRXueFP-MvSyylJ.jpeg"
-        },
-        {
-          "slug": "steyk-striploin-z-yalovichini-ta-batatom",
-          "title": "Стейк Стріплоін з яловичини та бататом",
-          "price": 380,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FlGYFAe-ueburgL-hqGvkRn.jpeg"
-        },
-        {
-          "slug": "steyk-striploin-z-yalovichini-ta-kartopleyu-fri",
-          "title": "Стейк Стріплоін з яловичини та картоплею фрі",
-          "price": 350,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/pkpCYCd-RRPelbN-jpCJIVF_prepare.jpeg"
-        },
-        {
-          "slug": "steyk-z-file-svinini-z-batatom-fri",
-          "title": "Стейк з філе свинини з бататом фрі",
-          "price": 330,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/EliIQue-SZluRuP-eKHMXHW.jpeg"
-        },
-        {
-          "slug": "steyk-z-file-svinini-z-kartopleyu-fri-410",
-          "title": "Стейк з філе свинини з картоплею фрі",
-          "price": 300,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FLDiaEd-RiRiIcG-JyumEJc_prepare.jpeg"
-        },
-        {
-          "slug": "file-lososya-z-kartoplyanim-pyure-i-brokoli",
-          "title": "Філе лосося з картопляним пюре і броколі",
-          "price": 300,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/hOKQTYz-IJlDlGm-secDGHQ_prepare.jpeg"
-        },
-        {
-          "slug": "medalyoni-z-svinnoyi-virizki-z-kartoplyanim-pyure-ta-gribnim-sousom",
-          "title": "Медальйони з свинної вирізки з картопляним пюре та грибним соусом",
-          "price": 230,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FDQHmlH-gwiKXDC-GjaYVGh_prepare.jpeg"
-        },
-        {
-          "slug": "deruni-z-gribnim-sousom",
-          "title": "Деруни з грибним соусом",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/OHwclsm-mCCDzml-YtwDDfZ.jpeg"
-        },
-        {
-          "slug": "zhulien-v-bulochci-briosh-z-indichkoyu-ta-bilimi-gribami",
-          "title": "Жульєн в булочці бріош з індичкою та білими грибами",
-          "price": 130,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/MFAGCod-EDujKKe-DMvqKrU.jpeg"
-        },
-        {
-          "slug": "ovochi-gril",
-          "title": "Овочі гриль",
-          "price": 110,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/liKcIZx-bkzCGGM-KcHbiFK.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "БОУЛИ",
-      "products": [
-        {
-          "slug": "boul-z-kinoa-brokoli-avokado-ta-indichkoyu",
-          "title": "Боул з кіноа, броколі, авокадо та індичкою",
-          "price": 200,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/xOQGxbv-qzxevUb-kUtHOSI.jpeg"
-        },
-        {
-          "slug": "boul-z-risom-kukurudzoyu-i-indichkoyu-v-gostro-solodkomu-sousi",
-          "title": "Боул з рисом , кукурудзою і індичкою в гостро солодкому соусі",
-          "price": 200,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/OYWIRSO-TuqkFMB-rUvEMLR.jpeg"
-        },
-        {
-          "slug": "boul-z-lososem-krem-sirom-avokado-ta-kuskusom",
-          "title": "Боул з лососем, крем-сиром, авокадо та кускусом",
-          "price": 220,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HRnmGcd-EQleXbJ-glYQBrf.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "Гарніри",
-      "products": [
-        {
-          "slug": "apelsinoviy-kuskus-z-ovochami",
-          "title": "Апельсиновий кускус з овочами",
-          "price": 75,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/aCbKmCa-IXxiRMn-DCJEwue.jpeg"
-        },
-        {
-          "slug": "dolki-batata-fri",
-          "title": "Дольки батата фрі",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DMhAHkV-pPooomn-KkCHEMS_prepare.jpeg"
-        }
-      ]
-    },
-    {
-      "category": "ДЕСЕРТИ",
-      "products": [
-        {
-          "slug": "mlinci-z-apelsinovoyu-karamellyu-ta-morozivom",
-          "title": "Млинці з апельсиновою карамеллю та морозивом",
-          "price": 110,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/WNJzBcI-IdGRJYj-AJFwCgb.jpeg"
-        },
-        {
-          "slug": "mlinci-z-tvorogom-ta-sousom-z-medu-i-smetani",
-          "title": "Млинці з творогом та соусом з меду і сметани",
-          "price": 120,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/CciAtWm-IFjpcRa-lVuNLFB.jpeg"
-        },
-        {
-          "slug": "sirniki-z-yagidnim-sousom",
-          "title": "Сирники з ягідним соусом",
-          "price": 130,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/clDEgHW-dlVCySe-hlCQHbg.jpeg"
-        },
-        {
-          "slug": "sirniki-v-vanilnomu-sousi",
-          "title": "Сирники в ванільному соусі",
-          "price": 150,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/RQQGFlR-HiMlbxd-iqzoqhF.jpeg"
-        },
-        {
-          "slug": "francuzkiy-tost-z-persikom",
-          "title": "Французький тост з персиком",
-          "price": 185,
-          "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lkfJFne-JmopajF-mwDebJI_prepare.jpeg"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "category": "breakfasts",
+    "name": "Мюнхенський сніданок",
+    "description": "Яєчня з сосисками, смажений бекон, тости, помідори черрі, свіжа зелень",
+    "price": 210,
+    "weight": "300г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/Preenzw-aqcySWP-YGybFlP.jpeg"
+  },
+  {
+    "id": 2,
+    "category": "breakfasts",
+    "name": "Англійський сніданок",
+    "description": "Яєчня пашот, смажені тости, бекон, квасоля, смажені гриби та помідори",
+    "price": 190,
+    "weight": "300г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/zKsKMHY-JOfXMnA-DSGHRdf.jpeg"
+  },
+  {
+    "id": 3,
+    "category": "breakfasts",
+    "name": "Скрембл з лососем",
+    "description": "Ніжні збиті яйця з копченим лососем, вершковим сиром та свіжим кропом",
+    "price": 230,
+    "weight": "350г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uHOHGbt-tnJHvCg-NsAiIbe_prepare.jpeg"
+  },
+  {
+    "id": 4,
+    "category": "breakfasts",
+    "name": "Скрембл з куркою",
+    "description": "Збиті яйця з ніжним філе курки, зеленою цибулею та вершковим соусом",
+    "price": 180,
+    "weight": "300г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/fcIKAbv-geMzeCw-CQCGOee_prepare.jpeg"
+  },
+  {
+    "id": 5,
+    "category": "breakfasts",
+    "name": "Скрембл з сосисками",
+    "description": "Класичний скрембл з апетитними сосисками та свіжою зеленню",
+    "price": 170,
+    "weight": "300г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/jYNDTbu-EjwJXHW-FjUsdGL_prepare.jpeg"
+  },
+  {
+    "id": 6,
+    "category": "breakfasts",
+    "name": "Омлет з сиром та копченою куркою",
+    "description": "Пишний омлет з розтопленим сиром та ароматною копченою куркою",
+    "price": 170,
+    "weight": "280г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FhxRYoj-eMUJhdz-lKLdefl.jpeg"
+  },
+  {
+    "id": 7,
+    "category": "breakfasts",
+    "name": "Авокадо тост з лососем",
+    "description": "Хрусткий тост з кремом авокадо, копченим лососем та яйцем пашот",
+    "price": 210,
+    "weight": "200г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/LRYIdCZ-IbDKtyL-hGCcoeC_prepare.jpeg"
+  },
+  {
+    "id": 8,
+    "category": "breakfasts",
+    "name": "Авокадо тост з креветками",
+    "description": "Тост з пастою авокадо, тигровими креветками, лаймовим соком та чілі",
+    "price": 230,
+    "weight": "370г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/XmfQSlM-nIVyATH-VdIHoan_prepare.jpeg"
+  },
+  {
+    "id": 9,
+    "category": "breakfasts",
+    "name": "Крок Мадам",
+    "description": "Класичний французький сендвіч із шинкою, сиром та яйцем пашот",
+    "price": 160,
+    "weight": "300г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/cDpBNeJ-DQHZbKE-HbTtooF.jpeg"
+  },
+  {
+    "id": 10,
+    "category": "breakfasts",
+    "name": "Круасан Бенедикт",
+    "description": "Хрусткий круасан з беконом, яйцем пашот та голландським соусом",
+    "price": 170,
+    "weight": "300г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/jZlbiFd-fFYkAcY-SUOLjKW_prepare.jpeg"
+  },
+  {
+    "id": 11,
+    "category": "breakfasts",
+    "name": "Шакшука м'ясна",
+    "description": "Яйця, запечені у пряному томатному соусі з телячим фаршем та спеціями",
+    "price": 150,
+    "weight": "350г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FlZCRDl-dbWwjLF-nuGebBO_prepare.jpeg"
+  },
+  {
+    "id": 12,
+    "category": "breakfasts",
+    "name": "Шакшука",
+    "description": "Класична шакшука: яйця у томатному соусі з перцем, цибулею та спеціями",
+    "price": 130,
+    "weight": "300г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/YaywceJ-sbBDqfS-OmcIWWW.jpeg"
+  },
+  {
+    "id": 13,
+    "category": "breakfasts",
+    "name": "Вівсянка з пармезаном",
+    "description": "Солона вівсяна каша з пармезаном, яйцем пашот та трюфельною олією",
+    "price": 120,
+    "weight": "250г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/BHARmqv-PynIQeM-xHABceL.jpeg"
+  },
+  {
+    "id": 14,
+    "category": "breakfasts",
+    "name": "Вівсяна каша з ягодами",
+    "description": "Ніжна вівсяна каша на молоці зі свіжими сезонними ягодами та медом",
+    "price": 100,
+    "weight": "300г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DSEhnbU-YSEYDNC-DYoIHaH.jpeg"
+  },
+  {
+    "id": 15,
+    "category": "menu",
+    "name": "Теплий салат з телятиною, сиром фета і баклажанами",
+    "description": "Ніжна телятина, карамелізований баклажан, мікс зелені, кунжутний соус",
+    "price": 220,
+    "weight": "300г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/fywilIt-EhmtYCb-IqzOfwH.jpeg"
+  },
+  {
+    "id": 16,
+    "category": "menu",
+    "name": "Паста Карбонара",
+    "description": "Класична італійська паста у нашій інтерпретації: поєднання бекону, шинки та прошутто",
+    "price": 190,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/IkzOIbe-cOOHKDb-HRcxPqd.jpeg"
+  },
+  {
+    "id": 17,
+    "category": "menu",
+    "name": "Норвезький суп з лососем",
+    "description": "Ніжний вершковий суп із лососем, бейбі морквою та селерою",
+    "price": 130,
+    "weight": "350мл",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/GwrEDvb-zHDDICH-CCncUQV.jpeg"
+  },
+  {
+    "id": 18,
+    "category": "menu",
+    "name": "Боул з кіноа, броколі, авокадо та індичкою",
+    "description": "Суперфуд у тарілці! Поживна кіноа, запечене філе індички, броколі",
+    "price": 200,
+    "weight": "400г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/xOQGxbv-qzxevUb-kUtHOSI.jpeg"
+  },
+  {
+    "id": 19,
+    "category": "menu",
+    "name": "Бургер Brooklyn Bacon",
+    "description": "Соковитий бургер на кунжутній булці з великою яловичою котлетою",
+    "price": 250,
+    "weight": "400г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/TlFhFrI-eeZXHIW-PcDnOlB.jpeg"
+  },
+  {
+    "id": 20,
+    "category": "menu",
+    "name": "Круасан з лососем та свіжими овочами",
+    "description": "Ніжний слабосолений лосось, скрембл, соковитий помідор та хрусткий айсберг",
+    "price": 160,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/qllJtCV-JRGfmMM-fFjSZLh.jpeg"
+  },
+  {
+    "id": 21,
+    "category": "menu",
+    "name": "Млинці з апельсиновою карамеллю та морозивом",
+    "description": "Французька класика, тонкий млинець просочений карамеллю з апельсина",
+    "price": 110,
+    "weight": "250г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/aCbKmCa-IXxiRMn-DCJEwue.jpeg"
+  },
+  {
+    "id": 22,
+    "category": "menu",
+    "name": "Цезар з креветкою",
+    "description": "Свіжа зелень, класична заправка, тигрові креветки, пармезан та сухарики",
+    "price": 220,
+    "weight": "300г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/QbDHXGk-UxUuBge-FfaHVSe_prepare.jpeg"
+  },
+  {
+    "id": 23,
+    "category": "menu",
+    "name": "Паста з м'ясом пастрамі та соусом з томатів",
+    "description": "Соус із томатів пелатті, барбекю та демігласу з додаванням ніжного пастрамі",
+    "price": 190,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/kPGDyzC-YUnxiHD-gblkIPK.jpeg"
+  },
+  {
+    "id": 24,
+    "category": "menu",
+    "name": "Сирний суп з індичкою та овочами",
+    "description": "Овочевий бульйон, вершково-сирна основа, філе індички",
+    "price": 130,
+    "weight": "350мл",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/grSqrRd-YaxKToV-ffEqmkk.jpeg"
+  },
+  {
+    "id": 25,
+    "category": "menu",
+    "name": "Боул з рисом, кукурудзою і індичкою",
+    "description": "Мікс салата, бейбі морква, помідор черрі, рис з оригінальною заправкою",
+    "price": 200,
+    "weight": "400г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/OYWIRSO-TuqkFMB-rUvEMLR.jpeg"
+  },
+  {
+    "id": 26,
+    "category": "menu",
+    "name": "Бургер Brooklyn Bacon (темна булка)",
+    "description": "Соковитий бургер на темній кунжутній булці з великою яловичою котлетою",
+    "price": 250,
+    "weight": "400г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/VlpExyd-eXkllet-IscXtlD.jpeg"
+  },
+  {
+    "id": 27,
+    "category": "menu",
+    "name": "Круасан Цезар з куркою",
+    "description": "Свіжий круасан із хрустким листям салату, соковитими помідорами та куркою",
+    "price": 150,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/EcgBcth-lcqQIye-yADXrKJ_prepare.jpeg"
+  },
+  {
+    "id": 28,
+    "category": "menu",
+    "name": "Картопляні діпи",
+    "description": "Картопляні діпи з сирним або йогуртово-часниковим соусом на вибір",
+    "price": 80,
+    "weight": "200г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/XLWqbRX-TrZSyjo-xvbxPsT.jpeg"
+  },
+  {
+    "id": 29,
+    "category": "menu",
+    "name": "Філе індички з овочами та оливками",
+    "description": "Філе індички на грилі подається з овочами та пікантними оливками",
+    "price": 260,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/xPixOjX-xRXueFP-MvSyylJ.jpeg"
+  },
+  {
+    "id": 30,
+    "category": "menu",
+    "name": "Млинці з творогом та соусом з меду і сметани",
+    "description": "Класичне поєднання ніжного творогу, тонких млинців і домашнього соусу",
+    "price": 120,
+    "weight": "250г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/CciAtWm-IFjpcRa-lVuNLFB.jpeg"
+  },
+  {
+    "id": 31,
+    "category": "menu",
+    "name": "Дольки батата фрі",
+    "description": "Хрусткі дольки батата приготовані в фритюрі з пармезаном",
+    "price": 150,
+    "weight": "200г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DMhAHkV-pPooomn-KkCHEMS_prepare.jpeg"
+  },
+  {
+    "id": 32,
+    "category": "menu",
+    "name": "Салат Цезар",
+    "description": "Свіжа зелень, класична заправка з каперсів, анчоусів і пармезану",
+    "price": 200,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FFJITrq-GXIphLj-IXEtzDH.jpeg"
+  },
+  {
+    "id": 33,
+    "category": "menu",
+    "name": "Паста з телятиною, песто і білими грибами",
+    "description": "Соковита телятина, ароматні білі гриби та вершковий грибний соус",
+    "price": 230,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HVUcsJQ-KQryVHm-JdFnDej.jpeg"
+  },
+  {
+    "id": 34,
+    "category": "menu",
+    "name": "Крем-суп з гарбуза та чіпсами копченого бекону",
+    "description": "Шовковистий суп із печеного гарбуза та болгарського перцю",
+    "price": 140,
+    "weight": "350мл",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/OtFreDN-ttOJARF-LbIlCni_prepare.jpeg"
+  },
+  {
+    "id": 35,
+    "category": "menu",
+    "name": "Боул з лососем, крем-сиром, авокадо та кускусом",
+    "description": "Здоровий та вишуканий вибір: м'який кускус, вершковий крем-сир",
+    "price": 220,
+    "weight": "400г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HRnmGcd-EQleXbJ-glYQBrf.jpeg"
+  },
+  {
+    "id": 36,
+    "category": "menu",
+    "name": "Бургер New Yorker",
+    "description": "Бургер у пишній булці з великою соковитою котлетою",
+    "price": 220,
+    "weight": "400г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HPIjDTD-ukcrSDj-qMYxDxY.jpeg"
+  },
+  {
+    "id": 37,
+    "category": "menu",
+    "name": "Картопляні кульки з сметанно-часниковим соусом",
+    "description": "Хрусткі картопляні кульки з ніжним сметанно-часниковим соусом",
+    "price": 80,
+    "weight": "200г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/AfzsHHI-kVOSSqU-aKbVSYs.jpeg"
+  },
+  {
+    "id": 38,
+    "category": "menu",
+    "name": "Стейк Стріплоін з яловичини та бататом",
+    "description": "Стейк з товстого краю яловичини середньої прожарки з дольками батата",
+    "price": 380,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FlGYFAe-ueburgL-hqGvkRn.jpeg"
+  },
+  {
+    "id": 39,
+    "category": "menu",
+    "name": "Сирники з ягідним соусом",
+    "description": "Золотисті сирники з ягідним соусом на основі йогурту",
+    "price": 130,
+    "weight": "250г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/clDEgHW-dlVCySe-hlCQHbg.jpeg"
+  },
+  {
+    "id": 40,
+    "category": "menu",
+    "name": "Салат з лососем, апельсином і авокадо",
+    "description": "Ніжний лосось, цитрусова свіжість апельсина та кремовий авокадо",
+    "price": 210,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/DIObJQH-VrnStAw-PUFijBI_prepare.jpeg"
+  },
+  {
+    "id": 41,
+    "category": "menu",
+    "name": "Паста з індичкою і білими грибами",
+    "description": "Ніжне філе індика, мариноване з пряними травами, обсмажується",
+    "price": 230,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/GNcyGHe-lFkRcDF-rZLimdA.jpeg"
+  },
+  {
+    "id": 42,
+    "category": "menu",
+    "name": "Сирний крем-суп з кукурудзою",
+    "description": "Ніжний вершковий суп на основі дорблю, пармезану та чеддера",
+    "price": 130,
+    "weight": "350мл",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/ZAoGVld-UIdHfwX-PyWGeOM.jpeg"
+  },
+  {
+    "id": 43,
+    "category": "menu",
+    "name": "Бургер Pastrami",
+    "description": "Рвана свинина, приготована за особливим рецептом, сирний соус",
+    "price": 200,
+    "weight": "380г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lQNgjFP-NaLBnSA-eMPROyP.jpeg"
+  },
+  {
+    "id": 44,
+    "category": "menu",
+    "name": "Круасан з томатами, моцарелою і песто",
+    "description": "Класичне середземноморське поєднання: кремова моцарела, соковиті помідори",
+    "price": 120,
+    "weight": "250г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lmmKLJe-HtPfBEq-FJDwFTF.jpeg"
+  },
+  {
+    "id": 45,
+    "category": "menu",
+    "name": "Стейк Стріплоін з яловичини та картоплею фрі",
+    "description": "Стейк з товстого краю яловичини середньої прожарки з картоплею фрі",
+    "price": 350,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/pkpCYCd-RRPelbN-jpCJIVF_prepare.jpeg"
+  },
+  {
+    "id": 46,
+    "category": "menu",
+    "name": "Сирники в ванільному соусі",
+    "description": "Ванільно-кокосовий соус, мигдальні пластівці та сирники",
+    "price": 150,
+    "weight": "250г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/RQQGFlR-HiMlbxd-iqzoqhF.jpeg"
+  },
+  {
+    "id": 47,
+    "category": "menu",
+    "name": "Салат з тунцем і авокадо",
+    "description": "Мікс зелені, консервований тунець, заправка з каперсів і гірчиці",
+    "price": 210,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/xzCFHsJ-UwegFgI-ulHnKBA.jpeg"
+  },
+  {
+    "id": 48,
+    "category": "menu",
+    "name": "Паста Альфредо з тунцем і лимонним соусом",
+    "description": "Ніжний тунець у поєднанні з вершково-лимонним соусом та пастою пене",
+    "price": 230,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/legQQIL-AopBLZG-bmJUbLT.jpeg"
+  },
+  {
+    "id": 49,
+    "category": "menu",
+    "name": "Бограч",
+    "description": "Традиційний угорський суп із яловичиною та свининою, щедрою кількістю овочів",
+    "price": 150,
+    "weight": "350мл",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/oxmIgeo-cvtkyJY-DeQNXJu_prepare.jpeg"
+  },
+  {
+    "id": 50,
+    "category": "menu",
+    "name": "Круасан з карамелізованою грушею, дор блю та горіхами",
+    "description": "Вишукане поєднання карамелізованої у кленовому сиропі груші",
+    "price": 130,
+    "weight": "260г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uFcZGJH-lBnFTsi-xlSoZZS.jpeg"
+  },
+  {
+    "id": 51,
+    "category": "menu",
+    "name": "Стейк з філе свинини з бататом фрі",
+    "description": "Соковита свинна вирізка, приготована до ніжної текстури, з дольками батата",
+    "price": 330,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/EliIQue-SZluRuP-eKHMXHW.jpeg"
+  },
+  {
+    "id": 52,
+    "category": "menu",
+    "name": "Салат ситий вегетаріанець",
+    "description": "Броколі та бейбі морква альденте, водорості чука, мікс зелені",
+    "price": 150,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/cDJiSMQ-viLnWTt-MoIrkek.jpeg"
+  },
+  {
+    "id": 53,
+    "category": "menu",
+    "name": "Паста з лососем, зеленим горошком і соусом Біск",
+    "description": "Ніжний лосось, зелений горошок і вишуканий соус Біск",
+    "price": 240,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/PztIAMU-cgLHaJx-vSReFlJ.jpeg"
+  },
+  {
+    "id": 54,
+    "category": "menu",
+    "name": "Бургер Cheeseburger Standard",
+    "description": "Класичний бургер на кунжутній булці з соковитою котлетою",
+    "price": 175,
+    "weight": "380г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/tGLblDW-ezklqGJ-bVsrAIm.jpeg"
+  },
+  {
+    "id": 55,
+    "category": "menu",
+    "name": "Моцарела фрі з соусом з журавлини",
+    "description": "Хрустка моцарела у клярі з кисло-солодким журавлинним соусом",
+    "price": 180,
+    "weight": "200г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/HJbktFT-hDfINlj-WfNMKCn.jpeg"
+  },
+  {
+    "id": 56,
+    "category": "menu",
+    "name": "Стейк з філе свинини з картоплею фрі",
+    "description": "Соковита свинна вирізка, приготована до ніжної текстури, з картоплею фрі",
+    "price": 300,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FLDiaEd-RiRiIcG-JyumEJc_prepare.jpeg"
+  },
+  {
+    "id": 57,
+    "category": "menu",
+    "name": "Салат грецький",
+    "description": "Свіжість огірка, соковитість томатів і болгарського перцю, ніжна фета",
+    "price": 180,
+    "weight": "280г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/MvbQGDr-ejCGFHV-AGwueAU.jpeg"
+  },
+  {
+    "id": 58,
+    "category": "menu",
+    "name": "Паста з морепродуктами і лимонним соусом",
+    "description": "Мікс морепродуктів (креветки, восьминоги бейбі) у ніжному лимонному соусі",
+    "price": 250,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/yHAnMHW-JpOmFPq-bxmoRfD.jpeg"
+  },
+  {
+    "id": 59,
+    "category": "menu",
+    "name": "Паста Болоньєзе",
+    "description": "Класичний соус болоньєзе зі свинини та яловичини, довго тушкований",
+    "price": 170,
+    "weight": "350г",
+    "prepTime": "20 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/LhAfOGK-JDlfpyZ-pmvFvln_prepare.jpeg"
+  },
+  {
+    "id": 60,
+    "category": "menu",
+    "name": "KIDS бургер з котлетою з індички",
+    "description": "Легкий дитячий бургер із котлетою з індички, листом салату",
+    "price": 150,
+    "weight": "280г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/nXGKzCK-ADQXSZJ-AGRnFbx.jpeg"
+  },
+  {
+    "id": 61,
+    "category": "menu",
+    "name": "Креветки фрі з гостро-солодким соусом",
+    "description": "Хрусткі смажені креветки з апетитним гостро-солодким соусом",
+    "price": 260,
+    "weight": "250г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/WCCSBsn-BaFdduA-WfXeSjk.jpeg"
+  },
+  {
+    "id": 62,
+    "category": "menu",
+    "name": "Філе лосося з картопляним пюре і броколі",
+    "description": "Ніжне філе лосося на грилі з ніжним пюре та свіжим броколі",
+    "price": 300,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/hOKQTYz-IJlDlGm-secDGHQ_prepare.jpeg"
+  },
+  {
+    "id": 63,
+    "category": "menu",
+    "name": "Піта з куркою",
+    "description": "Хрустка піта з куркою, обсмаженими грибами, кукурудзою, сиром",
+    "price": 150,
+    "weight": "280г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/elFPFHs-yXDsWaT-qIOCCRc.jpeg"
+  },
+  {
+    "id": 64,
+    "category": "menu",
+    "name": "Медальйони зі свинної вирізки з грибним соусом",
+    "description": "Ніжні медальйони з картопляним пюре та вершковим грибним соусом",
+    "price": 230,
+    "weight": "350г",
+    "prepTime": "25 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/FDQHmlH-gwiKXDC-GjaYVGh_prepare.jpeg"
+  },
+  {
+    "id": 65,
+    "category": "menu",
+    "name": "Крафтовий хот-дог з карамелізованим беконом",
+    "description": "Баварська сосиска, ніжний сирний соус із Чедера, ароматний соус Барбекю",
+    "price": 150,
+    "weight": "250г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/uLbAEji-veXgGbK-doFRBOw.jpeg"
+  },
+  {
+    "id": 66,
+    "category": "menu",
+    "name": "Деруни з грибним соусом",
+    "description": "Золотисті хрусткі деруни, доповнені ніжним вершковим соусом",
+    "price": 150,
+    "weight": "300г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/OHwclsm-mCCDzml-YtwDDfZ.jpeg"
+  },
+  {
+    "id": 67,
+    "category": "menu",
+    "name": "Французький тост з персиком",
+    "description": "Бріош, ванільний соус, карамелізований персик",
+    "price": 185,
+    "weight": "250г",
+    "prepTime": "12 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/lkfJFne-JmopajF-mwDebJI_prepare.jpeg"
+  },
+  {
+    "id": 68,
+    "category": "menu",
+    "name": "Жульєн в булочці бріош з індичкою та білими грибами",
+    "description": "Ситний жульєн з індички, білих грибів і трюфеля",
+    "price": 130,
+    "weight": "280г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/MFAGCod-EDujKKe-DMvqKrU.jpeg"
+  },
+  {
+    "id": 69,
+    "category": "menu",
+    "name": "Овочі гриль",
+    "description": "Соковиті кабачки, баклажани, помідори, синя цибуля та шампіньйони",
+    "price": 110,
+    "weight": "300г",
+    "prepTime": "15 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/liKcIZx-bkzCGGM-KcHbiFK.jpeg"
+  },
+  {
+    "id": 70,
+    "category": "menu",
+    "name": "Картопля фрі з кетчупом",
+    "description": "Класична картопля фрі з томатним кетчупом",
+    "price": 65,
+    "weight": "200г",
+    "prepTime": "10 хв",
+    "image": "https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/tfFleje-qCeoMCD-WpaGyrq.jpeg"
+  }
+]
+

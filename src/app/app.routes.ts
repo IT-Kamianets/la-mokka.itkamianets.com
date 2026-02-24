@@ -4,14 +4,13 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./pages/home/home.component').then(m => m.HomeComponent),
-    title: 'La Mokka — Бранч Кафе',
+      import('./pages/menu/menu.component').then(m => m.MenuComponent),
+    title: 'La Mokka — Меню',
   },
   {
     path: 'menu',
-    loadComponent: () =>
-      import('./pages/menu/menu.component').then(m => m.MenuComponent),
-    title: 'Меню — La Mokka',
+    redirectTo: '',
+    pathMatch: 'full',
   },
   {
     path: 'gallery',
@@ -24,12 +23,6 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./pages/contact/contact.component').then(m => m.ContactComponent),
     title: 'Контакти — La Mokka',
-  },
-  {
-    path: 'reservation',
-    loadComponent: () =>
-      import('./pages/reservation/reservation.component').then(m => m.ReservationComponent),
-    title: 'Бронювання — La Mokka',
   },
   {
     path: '**',
