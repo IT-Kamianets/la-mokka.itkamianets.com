@@ -1,7 +1,7 @@
 <div class="pt-[72px] min-h-screen bg-[#0a0a0a]">
 
   <!-- Page Header -->
-  <div class="relative py-24 px-4 overflow-hidden">
+  <div class="relative py-12 md:py-24 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#0a0a0a] to-[#0a0a0a]"></div>
     <div class="grain-texture absolute inset-0 pointer-events-none"></div>
     <div
@@ -20,20 +20,23 @@
         <div class="w-1 h-1 bg-[#C8A96E]/60 rotate-45 shrink-0"></div>
         <div class="h-px w-16 bg-gradient-to-l from-transparent to-[#C8A96E]/40"></div>
       </div>
-      <p class="anim-fade anim-d450 text-[#f0ece4]/30 text-sm font-light tracking-wide mb-8">
+      <p class="anim-fade anim-d450 text-[#f0ece4]/60 text-sm font-light tracking-wide mb-8">
         Авторські страви з якісних інгредієнтів
       </p>
       <div class="anim-fade anim-d600 flex justify-center">
-        <div class="inline-flex items-center gap-2.5 border border-[#C8A96E]/15 px-5 py-2">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#C8A96E]/50 animate-pulse shrink-0"></span>
-          <span class="text-[#C8A96E]/45 text-[10px] tracking-[0.35em] uppercase font-light">Сніданки подаємо до 21:00</span>
+        <div class="inline-flex items-center gap-2.5 border border-[#C8A96E]/30 px-5 py-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#C8A96E]/70 animate-pulse shrink-0"></span>
+          <span class="text-[#C8A96E]/75 text-[10px] tracking-[0.35em] uppercase font-light">Сніданки подаємо до 21:00</span>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Scroll anchor for tab switching -->
+  <div #listAnchor></div>
+
   <!-- Tab Navigation + Filter Bar (one sticky unit) -->
-  <div class="sticky top-[72px] z-40 bg-[#0a0a0a]/97 backdrop-blur-md">
+  <div #tabsNav class="sticky top-[72px] z-40 bg-[#0a0a0a]/97 backdrop-blur-md">
 
     <!-- Row 1: tabs -->
     <div class="border-b border-white/[0.06]">
@@ -42,8 +45,8 @@
           @for (tab of tabs; track tab.key) {
             <button
               (click)="setTab(tab.key)"
-              [class]="activeTab() === tab.key ? 'text-[#C8A96E]' : 'text-[#f0ece4]/30 hover:text-[#f0ece4]/55'"
-              class="relative shrink-0 flex flex-col items-center gap-2 px-8 sm:px-12 py-5 transition-colors duration-300 whitespace-nowrap">
+              [class]="activeTab() === tab.key ? 'text-[#C8A96E]' : 'text-[#f0ece4]/55 hover:text-[#f0ece4]/80'"
+              class="relative shrink-0 flex flex-col items-center gap-2 px-5 sm:px-8 md:px-12 py-5 transition-colors duration-300 whitespace-nowrap">
 
               <svg class="w-[17px] h-[17px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 @if (tab.key === 'drinks') {
@@ -58,7 +61,7 @@
               <span class="flex items-baseline gap-1.5">
                 <span class="text-[10px] tracking-[0.28em] uppercase font-light">{{ tab.label }}</span>
                 @if (!isLoading() && getTabCount(tab.key) > 0) {
-                  <span class="text-[8px] font-light opacity-35 tabular-nums">{{ getTabCount(tab.key) }}</span>
+                  <span class="text-[8px] font-light opacity-50 tabular-nums">{{ getTabCount(tab.key) }}</span>
                 }
               </span>
 
@@ -83,7 +86,7 @@
             <button
               (click)="setSubcategory(null)"
               class="relative shrink-0 px-5 py-3.5 text-[9px] tracking-[0.28em] uppercase font-light transition-colors duration-200 whitespace-nowrap"
-              [class]="activeSubcategory() === null ? 'text-[#C8A96E]' : 'text-[#f0ece4]/30 hover:text-[#f0ece4]/55'">
+              [class]="activeSubcategory() === null ? 'text-[#C8A96E]' : 'text-[#f0ece4]/55 hover:text-[#f0ece4]/80'">
               Всі
               <span
                 class="absolute bottom-0 inset-x-2 h-px bg-[#C8A96E] origin-center transition-transform duration-300"
@@ -96,7 +99,7 @@
               <button
                 (click)="setSubcategory(sub.key)"
                 class="relative shrink-0 px-5 py-3.5 text-[9px] tracking-[0.28em] uppercase font-light transition-colors duration-200 whitespace-nowrap"
-                [class]="activeSubcategory() === sub.key ? 'text-[#C8A96E]' : 'text-[#f0ece4]/30 hover:text-[#f0ece4]/55'">
+                [class]="activeSubcategory() === sub.key ? 'text-[#C8A96E]' : 'text-[#f0ece4]/55 hover:text-[#f0ece4]/80'">
                 {{ sub.label }}
                 <span
                   class="absolute bottom-0 inset-x-2 h-px bg-[#C8A96E] origin-center transition-transform duration-300"
@@ -117,7 +120,7 @@
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
 
           <!-- Filters label -->
-          <span class="text-[#f0ece4]/15 text-[9px] tracking-[0.4em] uppercase font-light shrink-0 hidden sm:block">
+          <span class="text-[#f0ece4]/40 text-[9px] tracking-[0.4em] uppercase font-light shrink-0 hidden sm:block">
             Фільтр
           </span>
 
@@ -128,7 +131,7 @@
                 (click)="toggleFilter(filter.key)"
                 [class]="isFilterActive(filter.key)
                   ? 'border-[#C8A96E]/45 text-[#C8A96E] bg-[#C8A96E]/[0.07]'
-                  : 'border-white/[0.07] text-[#f0ece4]/28 hover:border-white/15 hover:text-[#f0ece4]/50'"
+                  : 'border-white/[0.12] text-[#f0ece4]/50 hover:border-white/25 hover:text-[#f0ece4]/75'"
                 class="shrink-0 inline-flex items-center gap-1.5 border px-3.5 py-1.5 text-[9px] tracking-[0.2em] uppercase font-light transition-all duration-200 whitespace-nowrap">
 
                 <!-- Icon per filter -->
@@ -183,8 +186,8 @@
               <button
                 (click)="clearFilters()"
                 title="Скинути фільтри"
-                class="w-5 h-5 flex items-center justify-center text-[#f0ece4]/20 hover:text-[#C8A96E]/60 transition-colors duration-200">
-                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                class="w-11 h-11 flex items-center justify-center text-[#f0ece4]/40 hover:text-[#C8A96E]/60 transition-colors duration-200">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
               </button>
@@ -198,21 +201,21 @@
     @if (!isLoading()) {
       <div class="border-b border-white/[0.03]">
         <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center gap-3">
-          <svg class="w-3.5 h-3.5 text-[#f0ece4]/20 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg class="w-3.5 h-3.5 text-[#f0ece4]/40 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z"/>
           </svg>
           <input
             type="text"
             [value]="searchQuery()"
-            (input)="searchQuery.set($any($event.target).value)"
+            (input)="onSearch($any($event.target).value)"
             placeholder="Пошук страв та напоїв..."
-            class="flex-1 bg-transparent text-[#f0ece4]/60 text-xs font-light placeholder-[#f0ece4]/[0.12] focus:outline-none tracking-wide">
+            class="flex-1 bg-transparent text-[#f0ece4]/70 text-xs font-light placeholder-[#f0ece4]/30 focus:outline-none tracking-wide">
           @if (searchQuery()) {
             <span class="text-[#f0ece4]/20 text-[10px] tabular-nums font-light shrink-0">{{ searchResults().length }}</span>
             <button
               (click)="clearSearch()"
-              class="w-5 h-5 flex items-center justify-center text-[#f0ece4]/20 hover:text-[#C8A96E]/60 transition-colors duration-200 shrink-0">
-              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              class="w-11 h-11 flex items-center justify-center text-[#f0ece4]/40 hover:text-[#C8A96E]/60 transition-colors duration-200 shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
               </svg>
             </button>
@@ -238,7 +241,7 @@
             <article
               class="bg-[#0a0a0a] hover:bg-[#0f0f0f] transition-colors duration-500 group cursor-pointer menu-card"
               (click)="openModal(item)">
-              <div class="relative overflow-hidden h-56">
+              <div class="relative overflow-hidden h-44 sm:h-56">
                 <div class="absolute inset-0 img-shimmer transition-opacity duration-500"
                   [style.opacity]="isImageLoaded(item.id) ? '0' : '1'"></div>
                 <img [src]="item.image" [alt]="item.name"
@@ -278,7 +281,7 @@
                 <h3 class="font-display text-[#f0ece4]/90 text-lg font-light mb-1.5 leading-snug line-clamp-2">{{ item.name }}</h3>
                 <p class="text-[#f0ece4]/30 text-xs font-light leading-relaxed mb-4 line-clamp-2">{{ item.description }}</p>
                 <div class="flex items-end justify-between">
-                  <span class="text-[#f0ece4]/18 text-xs tracking-wider font-light">{{ item.weight }}</span>
+                  <span class="text-[#f0ece4]/35 text-xs tracking-wider font-light">{{ item.weight }}</span>
                   @if (item.sizes && item.sizes.length > 0) {
                     <div class="flex items-center gap-3">
                       @for (size of item.sizes; track size.label) {
@@ -372,7 +375,7 @@
               <p class="text-[#f0ece4]/30 text-xs font-light leading-relaxed mb-5 line-clamp-1">{{ item.description }}</p>
 
               <div class="flex items-end justify-between">
-                <span class="text-[#f0ece4]/18 text-xs tracking-wider font-light">{{ item.weight }}</span>
+                <span class="text-[#f0ece4]/35 text-xs tracking-wider font-light">{{ item.weight }}</span>
                 @if (item.sizes && item.sizes.length > 0) {
                   <div class="flex items-center gap-3">
                     @for (size of item.sizes; track size.label) {
@@ -489,17 +492,6 @@
     </div>
   }
 
-  <!-- Hours note -->
-  <div class="max-w-7xl mx-auto px-4 pb-20">
-    <div class="flex items-center gap-4 border-l border-[#C8A96E]/25 pl-5">
-      <svg class="w-3.5 h-3.5 text-[#C8A96E]/60 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-      </svg>
-      <p class="text-[#f0ece4]/35 text-sm font-light">
-        <span class="text-[#C8A96E]/80">Сніданки</span>&ensp;щодня з 08:30 до 21:00
-      </p>
-    </div>
-  </div>
 </div>
 
 
@@ -515,7 +507,7 @@
       <!-- Close button -->
       <button
         (click)="closeModal()"
-        class="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center text-[#f0ece4]/25 hover:text-[#C8A96E] transition-colors duration-300">
+        class="absolute top-3 right-3 z-20 w-11 h-11 flex items-center justify-center text-[#f0ece4]/25 hover:text-[#C8A96E] transition-colors duration-300">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -547,7 +539,7 @@
       </div>
 
       <!-- Details panel -->
-      <div class="flex-1 p-7 md:p-8 flex flex-col overflow-y-auto">
+      <div class="flex-1 p-5 md:p-8 flex flex-col overflow-y-auto">
         <!-- Category label -->
         <p class="text-[#C8A96E]/50 text-[9px] tracking-[0.45em] uppercase font-light mb-4">
           {{ selectedItem()!.category === 'breakfasts' ? 'Сніданки' : selectedItem()!.category === 'drinks' ? 'Напої' : 'Меню' }}
@@ -569,12 +561,12 @@
         <!-- Meta -->
         <div class="flex items-center gap-6 mb-auto">
           <div class="flex flex-col gap-1">
-            <span class="text-[#f0ece4]/20 text-[9px] tracking-[0.3em] uppercase font-light">Вага</span>
+            <span class="text-[#f0ece4]/40 text-[9px] tracking-[0.3em] uppercase font-light">Вага</span>
             <span class="text-[#f0ece4]/55 text-sm font-light">{{ selectedItem()!.weight }}</span>
           </div>
           <div class="w-px h-6 bg-white/[0.07]"></div>
           <div class="flex flex-col gap-1">
-            <span class="text-[#f0ece4]/20 text-[9px] tracking-[0.3em] uppercase font-light">Приготування</span>
+            <span class="text-[#f0ece4]/40 text-[9px] tracking-[0.3em] uppercase font-light">Приготування</span>
             <span class="text-[#f0ece4]/55 text-sm font-light">{{ selectedItem()!.prepTime }}</span>
           </div>
         </div>

@@ -1,7 +1,7 @@
 <div class="pt-[72px] min-h-screen bg-[#0a0a0a]">
 
   <!-- Header -->
-  <div class="relative py-24 px-4 overflow-hidden">
+  <div class="relative py-12 md:py-24 px-4 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#0a0a0a] to-[#0a0a0a]"></div>
     <div class="grain-texture absolute inset-0 pointer-events-none"></div>
     <div class="absolute -bottom-8 left-1/2 w-[600px] h-52 bg-[#C8A96E]/[0.06] blur-[80px] pointer-events-none"
@@ -66,7 +66,7 @@
       <!-- Close button -->
       <button
         (click)="closeLightbox()"
-        class="absolute -top-14 right-0 text-[#f0ece4]/30 hover:text-[#C8A96E] transition-colors duration-300 p-2">
+        class="absolute -top-10 sm:-top-14 right-0 text-[#f0ece4]/50 hover:text-[#C8A96E] transition-colors duration-300 p-3 min-w-[44px] min-h-[44px] flex items-center justify-center">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -78,20 +78,36 @@
         [alt]="activeImage()?.alt"
         class="w-full max-h-[80vh] object-contain">
 
-      <!-- Caption -->
-      <p class="text-center text-[#f0ece4]/25 text-[10px] mt-5 tracking-[0.4em] uppercase font-light">{{ activeImage()?.alt }}</p>
+      <!-- Caption + mobile nav -->
+      <div class="flex items-center justify-between mt-5 gap-4">
+        <button
+          (click)="navigate('prev')"
+          class="sm:hidden border border-white/[0.08] bg-[#111111] text-[#f0ece4]/40 active:text-[#C8A96E] p-3 shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <p class="text-center text-[#f0ece4]/25 text-[10px] tracking-[0.4em] uppercase font-light flex-1">{{ activeImage()?.alt }}</p>
+        <button
+          (click)="navigate('next')"
+          class="sm:hidden border border-white/[0.08] bg-[#111111] text-[#f0ece4]/40 active:text-[#C8A96E] p-3 shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
 
-      <!-- Navigation -->
+      <!-- Desktop navigation -->
       <button
         (click)="navigate('prev')"
-        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 border border-white/[0.08] bg-[#111111] hover:border-[#C8A96E]/40 text-[#f0ece4]/40 hover:text-[#C8A96E] p-3 transition-all duration-300 hidden sm:flex items-center justify-center">
+        class="absolute left-0 top-1/2 -translate-y-1/2 sm:-translate-x-16 border border-white/[0.08] bg-[#111111] hover:border-[#C8A96E]/40 text-[#f0ece4]/40 hover:text-[#C8A96E] p-3 transition-all duration-300 hidden sm:flex items-center justify-center">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/>
         </svg>
       </button>
       <button
         (click)="navigate('next')"
-        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 border border-white/[0.08] bg-[#111111] hover:border-[#C8A96E]/40 text-[#f0ece4]/40 hover:text-[#C8A96E] p-3 transition-all duration-300 hidden sm:flex items-center justify-center">
+        class="absolute right-0 top-1/2 -translate-y-1/2 sm:translate-x-16 border border-white/[0.08] bg-[#111111] hover:border-[#C8A96E]/40 text-[#f0ece4]/40 hover:text-[#C8A96E] p-3 transition-all duration-300 hidden sm:flex items-center justify-center">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/>
         </svg>

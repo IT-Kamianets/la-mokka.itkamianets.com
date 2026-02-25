@@ -13,8 +13,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Oxygen', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        display: ['"Cormorant Garamond"', '"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['Georgia', 'serif'],
+        display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
       },
       letterSpacing: {
         'ultra': '0.35em',

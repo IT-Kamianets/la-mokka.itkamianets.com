@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, computed, inject, HostListener } from '@angular/core';
+import { Component, OnInit, signal, computed, inject, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuService } from '../../core/services/menu.service';
 import { MenuItem } from '../../core/models/menu-item.model';
@@ -20,6 +20,9 @@ interface FilterDef {
   templateUrl: './menu.component.html',
 })
 export class MenuComponent implements OnInit {
+  @ViewChild('tabsNav') tabsNav!: ElementRef<HTMLElement>;
+  @ViewChild('listAnchor') listAnchor!: ElementRef<HTMLElement>;
+
   cursorX = signal(0);
   cursorY = signal(0);
 
@@ -174,16 +177,30 @@ export class MenuComponent implements OnInit {
     this.activeTab.set('menu');
   }
 
+  private scrollToTabs() {
+    this.listAnchor?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   setTab(tab: TabKey) {
     this.activeTab.set(tab);
     this.activeFilters.set(new Set());
     this.activeSubcategory.set(null);
     this.searchQuery.set('');
+    this.scrollToTabs();
+  }
+
+  onSearch(value: string) {
+    const wasEmpty = !this.searchQuery().trim();
+    this.searchQuery.set(value);
+    if (wasEmpty && value.trim()) {
+      this.scrollToTabs();
+    }
   }
 
   setSubcategory(key: string | null) {
     this.activeSubcategory.set(key);
     this.activeFilters.set(new Set());
+    this.scrollToTabs();
   }
 
   getTabCount(key: TabKey): number {
@@ -195,6 +212,7 @@ export class MenuComponent implements OnInit {
     const next = new Set(this.activeFilters());
     next.has(key) ? next.delete(key) : next.add(key);
     this.activeFilters.set(next);
+    this.scrollToTabs();
   }
 
   isFilterActive(key: FilterKey): boolean {
@@ -229,9 +247,11 @@ export class MenuComponent implements OnInit {
 
   openModal(item: MenuItem) {
     this.selectedItem.set(item);
+    document.body.style.overflow = 'hidden';
   }
 
   closeModal() {
     this.selectedItem.set(null);
+    document.body.style.overflow = '';
   }
 }

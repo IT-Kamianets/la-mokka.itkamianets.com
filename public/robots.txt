@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://la-mokka.itkamianets.com/sitemap.xml
