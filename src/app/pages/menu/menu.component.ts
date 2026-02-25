@@ -20,6 +20,9 @@ interface FilterDef {
   templateUrl: './menu.component.html',
 })
 export class MenuComponent implements OnInit {
+  cursorX: WritableSignal<number> = signal(0);
+  cursorY: WritableSignal<number> = signal(0);
+
   private menuService = inject(MenuService);
 
   activeTab = signal<TabKey>('menu');
