@@ -27,7 +27,7 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
-
+    
 # Cache
 .cache/
 
@@ -37,3 +37,4 @@ npm-debug.log*
 # Screenshots / temp files
 Знімок*.png
 Screenshot*.png
+2026-01-09.webp

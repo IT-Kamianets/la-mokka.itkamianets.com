@@ -71,6 +71,30 @@ html {
 .anim-d450 { animation-delay: 450ms; }
 .anim-d600 { animation-delay: 620ms; }
 
+/* Image skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.img-shimmer {
+  background: linear-gradient(90deg, #111 0%, #191919 30%, #222 50%, #191919 70%, #111 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* Menu card micro-interactions */
+.menu-card {
+  transition: box-shadow 0.45s ease, transform 0.18s ease;
+  will-change: transform;
+}
+.menu-card:hover {
+  box-shadow: 0 8px 40px rgba(200, 169, 110, 0.07), inset 0 0 0 1px rgba(200, 169, 110, 0.05);
+}
+.menu-card:active {
+  transform: scale(0.984);
+  transition: transform 0.1s ease;
+}
+
 /* Nav link animated underline */
 .nav-link {
   position: relative;

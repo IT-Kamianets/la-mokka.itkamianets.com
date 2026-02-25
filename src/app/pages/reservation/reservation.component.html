@@ -1,181 +1,196 @@
-<div class="pt-16 min-h-screen">
+<div class="pt-[72px] min-h-screen bg-[#0a0a0a]">
+
   <!-- Header -->
-  <div class="bg-gradient-to-b from-black to-[#111111] py-16 px-4 border-b border-white/5">
-    <div class="max-w-7xl mx-auto text-center">
-      <p class="text-[#C8A96E] text-xs tracking-[0.4em] uppercase mb-4">La Mokka</p>
-      <h1 class="font-serif text-4xl sm:text-5xl text-[#f0ece4] mb-4">Бронювання столу</h1>
-      <div class="flex items-center justify-center gap-4 mb-4">
-        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
-        <div class="w-1 h-1 rounded-full bg-[#C8A96E]/60"></div>
-        <div class="h-px w-12 bg-[#C8A96E]/40"></div>
+  <div class="relative py-24 px-4 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#0a0a0a] to-[#0a0a0a]"></div>
+    <div class="grain-texture absolute inset-0 pointer-events-none"></div>
+    <div class="absolute -bottom-8 left-1/2 w-[600px] h-52 bg-[#C8A96E]/[0.06] blur-[80px] pointer-events-none"
+      style="transform: translateX(-50%)"></div>
+    <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
+    <div class="relative z-10 max-w-7xl mx-auto text-center">
+      <p class="anim-fade anim-d0 text-[#C8A96E]/60 text-[10px] tracking-[0.55em] uppercase mb-7 font-light">La Mokka</p>
+      <h1 class="anim-fade anim-d150 font-display text-5xl sm:text-6xl font-light italic text-[#f0ece4] mb-7 leading-none">
+        Бронювання
+      </h1>
+      <div class="anim-fade anim-d300 flex items-center justify-center gap-5 mb-7">
+        <div class="h-px w-16 bg-gradient-to-r from-transparent to-[#C8A96E]/40"></div>
+        <div class="w-1 h-1 bg-[#C8A96E]/60 rotate-45 shrink-0"></div>
+        <div class="h-px w-16 bg-gradient-to-l from-transparent to-[#C8A96E]/40"></div>
       </div>
-      <p class="text-[#f0ece4]/50 text-base">Заберіть місце та насолоджуйтесь без очікування</p>
+      <p class="anim-fade anim-d450 text-[#f0ece4]/30 text-sm font-light tracking-wide">
+        Заберіть місце та насолоджуйтесь без очікування
+      </p>
     </div>
   </div>
 
-  <div class="max-w-xl mx-auto px-4 py-12 pb-20">
+  <!-- Content -->
+  <div class="max-w-xl mx-auto px-4 pb-20">
+
     <!-- Success State -->
     @if (success()) {
-      <div class="bg-[#1a1a1a] p-10 border border-[#C8A96E]/30 text-center">
-        <div class="w-14 h-14 border border-[#C8A96E]/40 flex items-center justify-center mx-auto mb-6">
-          <svg class="w-6 h-6 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="border border-white/[0.06] bg-[#0a0a0a] p-12 text-center">
+        <div class="w-12 h-12 border border-[#C8A96E]/30 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-5 h-5 text-[#C8A96E]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/>
           </svg>
         </div>
-        <h2 class="font-serif text-[#f0ece4] text-2xl mb-3">Бронювання прийнято</h2>
-        <p class="text-[#f0ece4]/50 text-sm mb-8 leading-relaxed">
+        <p class="text-[#C8A96E]/50 text-[9px] tracking-[0.45em] uppercase font-light mb-4">Підтверджено</p>
+        <h2 class="font-display text-[#f0ece4]/85 text-2xl font-light italic mb-4">Бронювання прийнято</h2>
+        <div class="h-px w-10 bg-gradient-to-r from-[#C8A96E]/30 to-transparent mx-auto mb-6"></div>
+        <p class="text-[#f0ece4]/35 text-sm font-light leading-relaxed mb-10">
           Дякуємо! Ми зв'яжемося з вами найближчим часом для підтвердження бронювання.
         </p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <button
             (click)="resetForm()"
-            class="bg-[#C8A96E] text-[#111111] px-7 py-3 text-sm tracking-widest uppercase font-bold hover:bg-[#b89558] transition-all">
+            class="border border-[#C8A96E]/40 text-[#C8A96E] px-8 py-3 text-[10px] tracking-[0.3em] uppercase font-light hover:bg-[#C8A96E]/[0.08] hover:border-[#C8A96E]/70 transition-all duration-300">
             Нове бронювання
           </button>
-          <a routerLink="/menu"
-             class="border border-white/20 text-[#f0ece4]/70 px-7 py-3 text-sm tracking-widest uppercase hover:border-white/40 hover:text-[#f0ece4] transition-all">
+          <a routerLink="/"
+            class="border border-white/[0.08] text-[#f0ece4]/35 px-8 py-3 text-[10px] tracking-[0.3em] uppercase font-light hover:border-white/[0.18] hover:text-[#f0ece4]/55 transition-all duration-300">
             Переглянути меню
           </a>
         </div>
       </div>
+
     } @else {
-      <!-- Booking Form -->
-      <div class="bg-[#1a1a1a] border border-white/5">
-        <div class="p-6 border-b border-white/8">
-          <h2 class="font-serif text-[#f0ece4] text-lg">Деталі бронювання</h2>
-          <p class="text-[#f0ece4]/40 text-xs mt-1 tracking-wide">Всі поля, позначені *, є обов'язковими</p>
+
+      <!-- Form -->
+      <div class="border border-white/[0.06]">
+
+        <!-- Form header -->
+        <div class="px-7 py-5 border-b border-white/[0.06]">
+          <p class="text-[#C8A96E]/50 text-[9px] tracking-[0.45em] uppercase font-light mb-1.5">Деталі</p>
+          <h2 class="font-display text-[#f0ece4]/75 text-xl font-light">Забронювати стіл</h2>
         </div>
 
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-6 space-y-5">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="px-7 py-7 space-y-6">
+
           <!-- Name -->
           <div>
-            <label class="block text-xs font-light text-[#f0ece4]/60 mb-2 tracking-widest uppercase">
+            <label class="block text-[#f0ece4]/25 text-[9px] tracking-[0.4em] uppercase font-light mb-2.5">
               Ваше ім'я *
             </label>
             <input
               type="text"
               formControlName="name"
               placeholder="Введіть ваше ім'я"
-              [class]="submitted() && f['name'].invalid ? 'border-red-500/60 focus:border-red-500' : 'border-white/10 focus:border-[#C8A96E]/60'"
-              class="w-full bg-[#111111] text-[#f0ece4] border px-4 py-3 text-sm outline-none transition-colors placeholder-[#f0ece4]/20">
+              [class]="submitted() && f['name'].invalid ? 'border-red-500/40' : 'border-white/[0.08] focus:border-[#C8A96E]/50'"
+              class="w-full bg-transparent text-[#f0ece4]/65 border px-4 py-3 text-sm font-light outline-none transition-colors duration-200 placeholder-[#f0ece4]/[0.12]">
             @if (submitted() && f['name'].errors?.['required']) {
-              <p class="text-red-400/80 text-xs mt-1">Вкажіть ваше ім'я</p>
+              <p class="text-red-400/55 text-[10px] mt-1.5 tracking-wide font-light">Вкажіть ваше ім'я</p>
             }
             @if (submitted() && f['name'].errors?.['minlength']) {
-              <p class="text-red-400/80 text-xs mt-1">Ім'я має містити мінімум 2 символи</p>
+              <p class="text-red-400/55 text-[10px] mt-1.5 tracking-wide font-light">Мінімум 2 символи</p>
             }
           </div>
 
           <!-- Phone -->
           <div>
-            <label class="block text-xs font-light text-[#f0ece4]/60 mb-2 tracking-widest uppercase">
+            <label class="block text-[#f0ece4]/25 text-[9px] tracking-[0.4em] uppercase font-light mb-2.5">
               Телефон *
             </label>
             <input
               type="tel"
               formControlName="phone"
               placeholder="+38 (0__) ___-__-__"
-              [class]="submitted() && f['phone'].invalid ? 'border-red-500/60 focus:border-red-500' : 'border-white/10 focus:border-[#C8A96E]/60'"
-              class="w-full bg-[#111111] text-[#f0ece4] border px-4 py-3 text-sm outline-none transition-colors placeholder-[#f0ece4]/20">
+              [class]="submitted() && f['phone'].invalid ? 'border-red-500/40' : 'border-white/[0.08] focus:border-[#C8A96E]/50'"
+              class="w-full bg-transparent text-[#f0ece4]/65 border px-4 py-3 text-sm font-light outline-none transition-colors duration-200 placeholder-[#f0ece4]/[0.12]">
             @if (submitted() && f['phone'].errors?.['required']) {
-              <p class="text-red-400/80 text-xs mt-1">Вкажіть номер телефону</p>
+              <p class="text-red-400/55 text-[10px] mt-1.5 tracking-wide font-light">Вкажіть номер телефону</p>
             }
             @if (submitted() && f['phone'].errors?.['pattern']) {
-              <p class="text-red-400/80 text-xs mt-1">Введіть коректний номер телефону</p>
+              <p class="text-red-400/55 text-[10px] mt-1.5 tracking-wide font-light">Введіть коректний номер</p>
             }
           </div>
 
           <!-- Date & Time -->
           <div class="grid grid-cols-2 gap-4">
             <div>
-              <label class="block text-xs font-light text-[#f0ece4]/60 mb-2 tracking-widest uppercase">
-                Дата *
-              </label>
+              <label class="block text-[#f0ece4]/25 text-[9px] tracking-[0.4em] uppercase font-light mb-2.5">Дата *</label>
               <input
                 type="date"
                 formControlName="date"
                 [min]="minDate"
-                [class]="submitted() && f['date'].invalid ? 'border-red-500/60 focus:border-red-500' : 'border-white/10 focus:border-[#C8A96E]/60'"
-                class="w-full bg-[#111111] text-[#f0ece4] border px-4 py-3 text-sm outline-none transition-colors">
+                [class]="submitted() && f['date'].invalid ? 'border-red-500/40' : 'border-white/[0.08] focus:border-[#C8A96E]/50'"
+                class="w-full bg-[#0a0a0a] text-[#f0ece4]/65 border px-4 py-3 text-sm font-light outline-none transition-colors duration-200">
               @if (submitted() && f['date'].errors?.['required']) {
-                <p class="text-red-400/80 text-xs mt-1">Оберіть дату</p>
+                <p class="text-red-400/55 text-[10px] mt-1.5 tracking-wide font-light">Оберіть дату</p>
               }
             </div>
-
             <div>
-              <label class="block text-xs font-light text-[#f0ece4]/60 mb-2 tracking-widest uppercase">
-                Час *
-              </label>
+              <label class="block text-[#f0ece4]/25 text-[9px] tracking-[0.4em] uppercase font-light mb-2.5">Час *</label>
               <select
                 formControlName="time"
-                [class]="submitted() && f['time'].invalid ? 'border-red-500/60 focus:border-red-500' : 'border-white/10 focus:border-[#C8A96E]/60'"
-                class="w-full bg-[#111111] text-[#f0ece4] border px-4 py-3 text-sm outline-none transition-colors">
-                <option value="" disabled>Час</option>
+                [class]="submitted() && f['time'].invalid ? 'border-red-500/40' : 'border-white/[0.08] focus:border-[#C8A96E]/50'"
+                class="w-full bg-[#0a0a0a] text-[#f0ece4]/65 border px-4 py-3 text-sm font-light outline-none transition-colors duration-200">
+                <option value="" disabled class="bg-[#0a0a0a]">Час</option>
                 @for (slot of timeSlots; track slot) {
-                  <option [value]="slot">{{ slot }}</option>
+                  <option [value]="slot" class="bg-[#0a0a0a]">{{ slot }}</option>
                 }
               </select>
               @if (submitted() && f['time'].errors?.['required']) {
-                <p class="text-red-400/80 text-xs mt-1">Оберіть час</p>
+                <p class="text-red-400/55 text-[10px] mt-1.5 tracking-wide font-light">Оберіть час</p>
               }
             </div>
           </div>
 
           <!-- Guests -->
           <div>
-            <label class="block text-xs font-light text-[#f0ece4]/60 mb-2 tracking-widest uppercase">
-              Кількість гостей *
-            </label>
+            <label class="block text-[#f0ece4]/25 text-[9px] tracking-[0.4em] uppercase font-light mb-2.5">Кількість гостей *</label>
             <div class="flex gap-2 flex-wrap">
               @for (n of guestOptions; track n) {
                 <button
                   type="button"
                   (click)="form.patchValue({ guests: n })"
                   [class]="form.value.guests === n
-                    ? 'bg-[#C8A96E] text-[#111111] border-[#C8A96E]'
-                    : 'bg-[#111111] text-[#f0ece4]/50 border-white/10 hover:border-[#C8A96E]/40'"
-                  class="w-10 h-10 border text-sm font-medium transition-all">
+                    ? 'border-[#C8A96E]/55 text-[#C8A96E] bg-[#C8A96E]/[0.07]'
+                    : 'border-white/[0.08] text-[#f0ece4]/30 hover:border-white/[0.18] hover:text-[#f0ece4]/55'"
+                  class="w-10 h-10 border text-sm font-light transition-all duration-200">
                   {{ n }}
                 </button>
               }
             </div>
-            <p class="text-[#f0ece4]/30 text-xs mt-2">Для груп понад 8 осіб телефонуйте нам</p>
+            <p class="text-[#f0ece4]/18 text-[10px] mt-2 font-light">Для груп понад 8 осіб телефонуйте нам</p>
           </div>
 
           <!-- Comments -->
           <div>
-            <label class="block text-xs font-light text-[#f0ece4]/60 mb-2 tracking-widest uppercase">
-              Коментар
-            </label>
+            <label class="block text-[#f0ece4]/25 text-[9px] tracking-[0.4em] uppercase font-light mb-2.5">Коментар</label>
             <textarea
               formControlName="comments"
               rows="3"
               placeholder="Особливі побажання, алергії, привід..."
-              class="w-full bg-[#111111] text-[#f0ece4] border border-white/10 focus:border-[#C8A96E]/60 px-4 py-3 text-sm outline-none transition-colors resize-none placeholder-[#f0ece4]/20">
+              class="w-full bg-transparent text-[#f0ece4]/65 border border-white/[0.08] focus:border-[#C8A96E]/50 px-4 py-3 text-sm font-light outline-none transition-colors duration-200 resize-none placeholder-[#f0ece4]/[0.12]">
             </textarea>
           </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-gradient-to-r from-[#C8A96E]/15 via-[#C8A96E]/5 to-transparent"></div>
 
           <!-- Submit -->
           <button
             type="submit"
-            class="w-full bg-[#C8A96E] text-[#111111] py-4 text-sm tracking-widest uppercase font-bold hover:bg-[#b89558] transition-all">
+            class="w-full border border-[#C8A96E]/35 text-[#C8A96E] py-4 text-[10px] tracking-[0.4em] uppercase font-light hover:bg-[#C8A96E]/[0.07] hover:border-[#C8A96E]/60 transition-all duration-300">
             Забронювати стіл
           </button>
 
-          <p class="text-[#f0ece4]/30 text-xs text-center">
+          <p class="text-[#f0ece4]/18 text-xs text-center font-light">
             Після відправлення ми зв'яжемося з вами для підтвердження
           </p>
         </form>
       </div>
 
-      <!-- Info note -->
-      <div class="mt-4 border border-white/8 p-4 flex gap-3">
-        <svg class="w-4 h-4 text-[#C8A96E] shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <!-- Phone note -->
+      <div class="mt-px border border-white/[0.06] bg-[#0a0a0a] px-7 py-5 flex items-start gap-4">
+        <svg class="w-3.5 h-3.5 text-[#C8A96E]/50 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
         </svg>
-        <p class="text-[#f0ece4]/50 text-sm">
-          Також можна зателефонувати за номером
-          <a href="tel:0770717700" class="text-[#C8A96E] hover:underline">0770717700</a>
+        <p class="text-[#f0ece4]/30 text-xs font-light">
+          Або зателефонуйте нам:
+          <a href="tel:0770717700" class="text-[#C8A96E]/65 hover:text-[#C8A96E] transition-colors duration-200">
+            0770717700
+          </a>
         </p>
       </div>
     }

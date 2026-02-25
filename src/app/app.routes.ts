@@ -25,6 +25,12 @@ export const routes: Routes = [
     title: 'Контакти — La Mokka',
   },
   {
+    path: 'reservation',
+    loadComponent: () =>
+      import('./pages/reservation/reservation.component').then(m => m.ReservationComponent),
+    title: 'Бронювання — La Mokka',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

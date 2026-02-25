@@ -2,22 +2,16 @@
 
   <!-- Page Header -->
   <div class="relative py-24 px-4 overflow-hidden">
-    <!-- Base gradient -->
     <div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-[#0a0a0a] to-[#0a0a0a]"></div>
-    <!-- Grain / paper texture -->
     <div class="grain-texture absolute inset-0 pointer-events-none"></div>
-    <!-- Parallax warm glow — moves slower than scroll -->
     <div
-      class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[600px] h-52 bg-[#C8A96E]/[0.06] blur-[80px] pointer-events-none transition-none"
+      class="absolute -bottom-8 left-1/2 w-[600px] h-52 bg-[#C8A96E]/[0.06] blur-[80px] pointer-events-none transition-none"
       [style.transform]="'translateX(-50%) translateY(' + (scrollY() * 0.28) + 'px)'">
     </div>
-    <!-- Top vignette -->
     <div class="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-black/40 to-transparent pointer-events-none"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto text-center">
-      <p class="anim-fade anim-d0 text-[#C8A96E]/60 text-[10px] tracking-[0.55em] uppercase mb-7 font-light">
-        La Mokka
-      </p>
+      <p class="anim-fade anim-d0 text-[#C8A96E]/60 text-[10px] tracking-[0.55em] uppercase mb-7 font-light">La Mokka</p>
       <h1 class="anim-fade anim-d150 font-display text-5xl sm:text-6xl font-light italic text-[#f0ece4] mb-7 leading-none">
         Наше меню
       </h1>
@@ -29,78 +23,361 @@
       <p class="anim-fade anim-d450 text-[#f0ece4]/30 text-sm font-light tracking-wide mb-8">
         Авторські страви з якісних інгредієнтів
       </p>
-      <!-- Breakfast accent badge -->
       <div class="anim-fade anim-d600 flex justify-center">
         <div class="inline-flex items-center gap-2.5 border border-[#C8A96E]/15 px-5 py-2">
           <span class="w-1.5 h-1.5 rounded-full bg-[#C8A96E]/50 animate-pulse shrink-0"></span>
-          <span class="text-[#C8A96E]/45 text-[10px] tracking-[0.35em] uppercase font-light">
-            Сніданки подаємо до 21:00
-          </span>
+          <span class="text-[#C8A96E]/45 text-[10px] tracking-[0.35em] uppercase font-light">Сніданки подаємо до 21:00</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Tab Navigation -->
-  <div class="sticky top-[72px] z-40 bg-[#0a0a0a]/97 backdrop-blur-md border-b border-white/[0.06]">
-    <div class="max-w-7xl mx-auto px-4">
-      <div class="flex gap-0 scrollbar-none overflow-x-auto">
-        @for (tab of tabs; track tab.key) {
-          <button
-            (click)="setTab(tab.key)"
-            [class]="activeTab() === tab.key
-              ? 'text-[#C8A96E] border-b border-[#C8A96E]'
-              : 'text-[#f0ece4]/40 border-b border-transparent hover:text-[#f0ece4]/70'"
-            class="shrink-0 px-6 py-5 text-[11px] tracking-[0.3em] uppercase font-light transition-all duration-300 whitespace-nowrap">
-            {{ tab.label }}
-          </button>
-        }
+  <!-- Tab Navigation + Filter Bar (one sticky unit) -->
+  <div class="sticky top-[72px] z-40 bg-[#0a0a0a]/97 backdrop-blur-md">
+
+    <!-- Row 1: tabs -->
+    <div class="border-b border-white/[0.06]">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex scrollbar-none overflow-x-auto">
+          @for (tab of tabs; track tab.key) {
+            <button
+              (click)="setTab(tab.key)"
+              [class]="activeTab() === tab.key ? 'text-[#C8A96E]' : 'text-[#f0ece4]/30 hover:text-[#f0ece4]/55'"
+              class="relative shrink-0 flex flex-col items-center gap-2 px-8 sm:px-12 py-5 transition-colors duration-300 whitespace-nowrap">
+
+              <svg class="w-[17px] h-[17px]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                @if (tab.key === 'drinks') {
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+                    d="M4 11h12v6a4 4 0 01-4 4H8a4 4 0 01-4-4v-6zM16 13h1.5a2 2 0 010 4H16M7.5 7C7.5 6 8.5 5 8.5 4M11.5 7C11.5 6 12.5 5 12.5 4"/>
+                } @else {
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"
+                    d="M7 3v4a1 1 0 002 0V3M8 7v14M15 3l.001 6.5H17V3m-1 6.5V21"/>
+                }
+              </svg>
+
+              <span class="flex items-baseline gap-1.5">
+                <span class="text-[10px] tracking-[0.28em] uppercase font-light">{{ tab.label }}</span>
+                @if (!isLoading() && getTabCount(tab.key) > 0) {
+                  <span class="text-[8px] font-light opacity-35 tabular-nums">{{ getTabCount(tab.key) }}</span>
+                }
+              </span>
+
+              <span
+                class="absolute bottom-0 inset-x-4 h-px bg-[#C8A96E] origin-center transition-transform duration-300"
+                [class.scale-x-100]="activeTab() === tab.key"
+                [class.scale-x-0]="activeTab() !== tab.key">
+              </span>
+            </button>
+          }
+        </div>
       </div>
     </div>
+
+    <!-- Row 2: subcategory nav (menu tab only) -->
+    @if (activeTab() === 'menu' && !isLoading()) {
+      <div class="border-b border-white/[0.06]">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex scrollbar-none overflow-x-auto">
+
+            <!-- "Всі" button -->
+            <button
+              (click)="setSubcategory(null)"
+              class="relative shrink-0 px-5 py-3.5 text-[9px] tracking-[0.28em] uppercase font-light transition-colors duration-200 whitespace-nowrap"
+              [class]="activeSubcategory() === null ? 'text-[#C8A96E]' : 'text-[#f0ece4]/30 hover:text-[#f0ece4]/55'">
+              Всі
+              <span
+                class="absolute bottom-0 inset-x-2 h-px bg-[#C8A96E] origin-center transition-transform duration-300"
+                [class.scale-x-100]="activeSubcategory() === null"
+                [class.scale-x-0]="activeSubcategory() !== null">
+              </span>
+            </button>
+
+            @for (sub of menuSubcategories; track sub.key) {
+              <button
+                (click)="setSubcategory(sub.key)"
+                class="relative shrink-0 px-5 py-3.5 text-[9px] tracking-[0.28em] uppercase font-light transition-colors duration-200 whitespace-nowrap"
+                [class]="activeSubcategory() === sub.key ? 'text-[#C8A96E]' : 'text-[#f0ece4]/30 hover:text-[#f0ece4]/55'">
+                {{ sub.label }}
+                <span
+                  class="absolute bottom-0 inset-x-2 h-px bg-[#C8A96E] origin-center transition-transform duration-300"
+                  [class.scale-x-100]="activeSubcategory() === sub.key"
+                  [class.scale-x-0]="activeSubcategory() !== sub.key">
+                </span>
+              </button>
+            }
+
+          </div>
+        </div>
+      </div>
+    }
+
+    <!-- Row 3: filters (shown after load) -->
+    @if (!isLoading()) {
+      <div class="border-b border-white/[0.03]">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4">
+
+          <!-- Filters label -->
+          <span class="text-[#f0ece4]/15 text-[9px] tracking-[0.4em] uppercase font-light shrink-0 hidden sm:block">
+            Фільтр
+          </span>
+
+          <!-- Filter chips -->
+          <div class="flex gap-2 overflow-x-auto scrollbar-none flex-1 py-0.5">
+            @for (filter of visibleFilters(); track filter.key) {
+              <button
+                (click)="toggleFilter(filter.key)"
+                [class]="isFilterActive(filter.key)
+                  ? 'border-[#C8A96E]/45 text-[#C8A96E] bg-[#C8A96E]/[0.07]'
+                  : 'border-white/[0.07] text-[#f0ece4]/28 hover:border-white/15 hover:text-[#f0ece4]/50'"
+                class="shrink-0 inline-flex items-center gap-1.5 border px-3.5 py-1.5 text-[9px] tracking-[0.2em] uppercase font-light transition-all duration-200 whitespace-nowrap">
+
+                <!-- Icon per filter -->
+                <svg class="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  @switch (filter.key) {
+                    @case ('popular') {
+                      <!-- Star -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                    }
+                    @case ('vegetarian') {
+                      <!-- Leaf -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M7 17C7 12 12 3 19 3c0 7-5 10-7 14M7 17c4 1.5 8 0 10-5"/>
+                    }
+                    @case ('glutenFree') {
+                      <!-- Wheat stalk with slash -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 3v14M9 6l3-2 3 2M9 10l3-2 3 2M4 20l16-16"/>
+                    }
+                    @case ('withMeat') {
+                      <!-- Fork (protein) -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M8.5 3v5a2 2 0 004 0V3M10.5 8v13M16 3v18"/>
+                    }
+                    @case ('spicy') {
+                      <!-- Flame -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                    }
+                    @default {
+                      <!-- Clock -->
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M12 6v6l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    }
+                  }
+                </svg>
+
+                {{ filter.label }}
+              </button>
+            }
+          </div>
+
+          <!-- Result count + clear when filters active -->
+          @if (activeFilters().size > 0) {
+            <div class="flex items-center gap-3 shrink-0">
+              <span class="text-[#f0ece4]/25 text-[10px] font-light tabular-nums">
+                {{ filteredItems().length }}
+              </span>
+              <button
+                (click)="clearFilters()"
+                title="Скинути фільтри"
+                class="w-5 h-5 flex items-center justify-center text-[#f0ece4]/20 hover:text-[#C8A96E]/60 transition-colors duration-200">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Row 4: search -->
+    @if (!isLoading()) {
+      <div class="border-b border-white/[0.03]">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 flex items-center gap-3">
+          <svg class="w-3.5 h-3.5 text-[#f0ece4]/20 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z"/>
+          </svg>
+          <input
+            type="text"
+            [value]="searchQuery()"
+            (input)="searchQuery.set($any($event.target).value)"
+            placeholder="Пошук страв та напоїв..."
+            class="flex-1 bg-transparent text-[#f0ece4]/60 text-xs font-light placeholder-[#f0ece4]/[0.12] focus:outline-none tracking-wide">
+          @if (searchQuery()) {
+            <span class="text-[#f0ece4]/20 text-[10px] tabular-nums font-light shrink-0">{{ searchResults().length }}</span>
+            <button
+              (click)="clearSearch()"
+              class="w-5 h-5 flex items-center justify-center text-[#f0ece4]/20 hover:text-[#C8A96E]/60 transition-colors duration-200 shrink-0">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+          }
+        </div>
+      </div>
+    }
   </div>
 
-  <!-- Menu Items Grid -->
+  <!-- Menu Items / Search Results -->
   <div class="max-w-7xl mx-auto px-4 py-12">
     @if (isLoading()) {
       <div class="flex flex-col items-center justify-center py-32 gap-4">
         <div class="w-6 h-6 border border-[#C8A96E]/40 border-t-[#C8A96E] rounded-full animate-spin"></div>
         <p class="text-[#f0ece4]/25 text-xs tracking-[0.3em] uppercase">Завантаження</p>
       </div>
+    } @else if (searchQuery().trim()) {
+
+      <!-- Search results cross-tab -->
+      @if (searchResults().length > 0) {
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
+          @for (item of searchResults(); track item.id) {
+            <article
+              class="bg-[#0a0a0a] hover:bg-[#0f0f0f] transition-colors duration-500 group cursor-pointer menu-card"
+              (click)="openModal(item)">
+              <div class="relative overflow-hidden h-56">
+                <div class="absolute inset-0 img-shimmer transition-opacity duration-500"
+                  [style.opacity]="isImageLoaded(item.id) ? '0' : '1'"></div>
+                <img [src]="item.image" [alt]="item.name"
+                  class="w-full h-full object-cover group-hover:scale-[1.05] transition-all duration-700 ease-out brightness-85 group-hover:brightness-75"
+                  loading="lazy" onerror="this.src='https://picsum.photos/seed/food/400/300'"
+                  (load)="imageLoaded(item.id)"
+                  [style.opacity]="isImageLoaded(item.id) ? '1' : '0'">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+                  <div class="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-400">
+                    <span class="inline-flex items-center gap-2 border border-[#C8A96E]/60 text-[#C8A96E] text-[10px] tracking-[0.35em] uppercase font-light px-5 py-2.5 bg-black/40 backdrop-blur-sm hover:bg-[#C8A96E]/10 transition-colors">
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                      </svg>
+                      Детальніше
+                    </span>
+                  </div>
+                </div>
+                <span class="absolute top-3 right-3 bg-[#0a0a0a]/70 backdrop-blur-sm text-[#f0ece4]/45 text-[9px] px-2.5 py-1 tracking-widest uppercase">{{ item.prepTime }}</span>
+                <div class="absolute top-3 left-3 flex flex-col gap-1">
+                  @if (item.popular) {
+                    <span class="bg-[#C8A96E] text-[#0a0a0a] text-[8px] tracking-[0.2em] uppercase font-bold px-2 py-0.5 leading-tight">Популярне</span>
+                  }
+                  @if (item.vegetarian) {
+                    <span class="bg-[#0a0a0a]/80 backdrop-blur-sm border border-emerald-600/40 text-emerald-400 text-[8px] tracking-[0.15em] uppercase px-2 py-0.5 leading-tight">Вегет.</span>
+                  }
+                  @if (item.spicy) {
+                    <span class="bg-[#0a0a0a]/80 backdrop-blur-sm border border-red-700/40 text-red-400 text-[8px] tracking-[0.15em] uppercase px-2 py-0.5 leading-tight">Гостре</span>
+                  }
+                </div>
+              </div>
+              <div class="h-px bg-gradient-to-r from-[#C8A96E]/25 via-[#C8A96E]/8 to-transparent"></div>
+              <div class="p-5 pb-6">
+                <p class="text-[#C8A96E]/40 text-[9px] tracking-[0.35em] uppercase font-light mb-1.5">
+                  {{ item.category === 'breakfasts' ? 'Сніданки' : item.category === 'drinks' ? 'Напої' : 'Меню' }}
+                </p>
+                <h3 class="font-display text-[#f0ece4]/90 text-lg font-light mb-1.5 leading-snug line-clamp-2">{{ item.name }}</h3>
+                <p class="text-[#f0ece4]/30 text-xs font-light leading-relaxed mb-4 line-clamp-2">{{ item.description }}</p>
+                <div class="flex items-end justify-between">
+                  <span class="text-[#f0ece4]/18 text-xs tracking-wider font-light">{{ item.weight }}</span>
+                  @if (item.sizes && item.sizes.length > 0) {
+                    <div class="flex items-center gap-3">
+                      @for (size of item.sizes; track size.label) {
+                        <span class="flex flex-col items-center gap-0.5">
+                          <span class="text-[#f0ece4]/22 text-[9px] uppercase tracking-[0.25em]">{{ size.label }}</span>
+                          <span class="text-[#C8A96E] font-light text-base leading-none">{{ size.price }} ₴</span>
+                        </span>
+                      }
+                    </div>
+                  } @else {
+                    <span class="text-[#C8A96E] font-light text-lg">{{ item.price }} ₴</span>
+                  }
+                </div>
+              </div>
+            </article>
+          }
+        </div>
+      } @else {
+        <div class="flex flex-col items-center py-32 gap-4">
+          <div class="w-px h-12 bg-gradient-to-b from-transparent to-[#C8A96E]/30"></div>
+          <p class="font-display text-2xl font-light italic text-[#f0ece4]/20">Нічого не знайдено</p>
+          <p class="text-[#f0ece4]/15 text-xs tracking-[0.3em] uppercase font-light">Спробуйте інший запит</p>
+          <div class="w-px h-12 bg-gradient-to-t from-transparent to-[#C8A96E]/30"></div>
+        </div>
+      }
+
     } @else {
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.04]">
         @for (item of filteredItems(); track item.id) {
-          <article class="bg-[#0a0a0a] hover:bg-[#111111] transition-colors duration-500 group">
+          <article
+            class="bg-[#0a0a0a] hover:bg-[#0f0f0f] transition-colors duration-500 group cursor-pointer menu-card"
+            (click)="openModal(item)">
+
             <!-- Image -->
             <div class="relative overflow-hidden h-56">
+              <div class="absolute inset-0 img-shimmer transition-opacity duration-500"
+                [style.opacity]="isImageLoaded(item.id) ? '0' : '1'"></div>
               <img
                 [src]="item.image"
                 [alt]="item.name"
-                class="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out brightness-90 group-hover:brightness-100"
+                class="w-full h-full object-cover group-hover:scale-[1.05] transition-all duration-700 ease-out brightness-85 group-hover:brightness-75"
                 loading="lazy"
-                onerror="this.src='https://picsum.photos/seed/food/400/300'">
-              <!-- Top gradient overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/60 via-transparent to-transparent"></div>
-              <!-- Prep time badge -->
-              <span class="absolute top-3 right-3 bg-[#0a0a0a]/70 backdrop-blur-sm text-[#f0ece4]/50 text-[10px] px-2.5 py-1 tracking-widest uppercase">
+                onerror="this.src='https://picsum.photos/seed/food/400/300'"
+                (load)="imageLoaded(item.id)"
+                [style.opacity]="isImageLoaded(item.id) ? '1' : '0'">
+
+              <!-- Dark overlay + "Детальніше" button on hover -->
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-500 flex items-center justify-center">
+                <div class="opacity-0 group-hover:opacity-100 translate-y-3 group-hover:translate-y-0 transition-all duration-400">
+                  <span class="inline-flex items-center gap-2 border border-[#C8A96E]/60 text-[#C8A96E] text-[10px] tracking-[0.35em] uppercase font-light px-5 py-2.5 bg-black/40 backdrop-blur-sm hover:bg-[#C8A96E]/10 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                    Детальніше
+                  </span>
+                </div>
+              </div>
+
+              <!-- Prep time badge (top right) -->
+              <span class="absolute top-3 right-3 bg-[#0a0a0a]/70 backdrop-blur-sm text-[#f0ece4]/45 text-[9px] px-2.5 py-1 tracking-widest uppercase">
                 {{ item.prepTime }}
               </span>
+
+              <!-- Category badges (top left) -->
+              <div class="absolute top-3 left-3 flex flex-col gap-1">
+                @if (item.popular) {
+                  <span class="bg-[#C8A96E] text-[#0a0a0a] text-[8px] tracking-[0.2em] uppercase font-bold px-2 py-0.5 leading-tight">
+                    Популярне
+                  </span>
+                }
+                @if (item.vegetarian) {
+                  <span class="bg-[#0a0a0a]/80 backdrop-blur-sm border border-emerald-600/40 text-emerald-400 text-[8px] tracking-[0.15em] uppercase px-2 py-0.5 leading-tight">
+                    Вегет.
+                  </span>
+                }
+                @if (item.spicy) {
+                  <span class="bg-[#0a0a0a]/80 backdrop-blur-sm border border-red-700/40 text-red-400 text-[8px] tracking-[0.15em] uppercase px-2 py-0.5 leading-tight">
+                    Гостре
+                  </span>
+                }
+              </div>
             </div>
 
-            <!-- Gold separator line -->
-            <div class="h-px bg-gradient-to-r from-[#C8A96E]/30 via-[#C8A96E]/10 to-transparent"></div>
+            <!-- Gold separator -->
+            <div class="h-px bg-gradient-to-r from-[#C8A96E]/25 via-[#C8A96E]/8 to-transparent"></div>
 
             <!-- Content -->
             <div class="p-5 pb-6">
-              <h3 class="font-display text-[#f0ece4]/90 text-lg font-light mb-2 leading-snug">{{ item.name }}</h3>
-              <p class="text-[#f0ece4]/35 text-sm leading-relaxed mb-6 font-light">{{ item.description }}</p>
+              <h3 class="font-display text-[#f0ece4]/90 text-lg font-light mb-1.5 leading-snug line-clamp-2">{{ item.name }}</h3>
+              <p class="text-[#f0ece4]/30 text-xs font-light leading-relaxed mb-5 line-clamp-1">{{ item.description }}</p>
 
               <div class="flex items-end justify-between">
-                <span class="text-[#f0ece4]/20 text-xs tracking-wider">{{ item.weight }}</span>
+                <span class="text-[#f0ece4]/18 text-xs tracking-wider font-light">{{ item.weight }}</span>
                 @if (item.sizes && item.sizes.length > 0) {
                   <div class="flex items-center gap-3">
                     @for (size of item.sizes; track size.label) {
                       <span class="flex flex-col items-center gap-0.5">
-                        <span class="text-[#f0ece4]/25 text-[9px] uppercase tracking-[0.25em]">{{ size.label }}</span>
+                        <span class="text-[#f0ece4]/22 text-[9px] uppercase tracking-[0.25em]">{{ size.label }}</span>
                         <span class="text-[#C8A96E] font-light text-base leading-none">{{ size.price }} ₴</span>
                       </span>
                     }
@@ -117,13 +394,100 @@
       @if (filteredItems().length === 0) {
         <div class="flex flex-col items-center py-32 gap-4">
           <div class="w-px h-12 bg-gradient-to-b from-transparent to-[#C8A96E]/30"></div>
-          <p class="font-display text-2xl font-light italic text-[#f0ece4]/20">Розділ поповнюється</p>
-          <p class="text-[#f0ece4]/15 text-xs tracking-[0.3em] uppercase font-light">Скоро тут з'являться нові страви</p>
+          @if (activeFilters().size > 0) {
+            <p class="font-display text-2xl font-light italic text-[#f0ece4]/20">Нічого не знайдено</p>
+            <p class="text-[#f0ece4]/15 text-xs tracking-[0.3em] uppercase font-light">За обраними фільтрами страви відсутні</p>
+            <button
+              (click)="clearFilters()"
+              class="mt-2 text-[#C8A96E]/35 hover:text-[#C8A96E]/65 text-[10px] tracking-[0.3em] uppercase font-light transition-colors duration-200 border border-[#C8A96E]/20 hover:border-[#C8A96E]/40 px-5 py-2">
+              Скинути фільтри
+            </button>
+          } @else {
+            <p class="font-display text-2xl font-light italic text-[#f0ece4]/20">Розділ поповнюється</p>
+            <p class="text-[#f0ece4]/15 text-xs tracking-[0.3em] uppercase font-light">Скоро тут з'являться нові страви</p>
+          }
           <div class="w-px h-12 bg-gradient-to-t from-transparent to-[#C8A96E]/30"></div>
         </div>
       }
     }
   </div>
+
+  <!-- Social Proof — popular items block -->
+  @if (!isLoading() && popularItems().length > 0 && activeFilters().size === 0 && !searchQuery().trim()) {
+    <div class="max-w-7xl mx-auto px-4 pb-16">
+
+      <!-- Section header -->
+      <div class="flex items-center gap-5 mb-8">
+        <div class="h-px flex-1 bg-gradient-to-r from-transparent to-white/[0.05]"></div>
+        <p class="text-[#C8A96E]/50 text-[10px] tracking-[0.5em] uppercase font-light shrink-0">Вибір гостей</p>
+        <div class="h-px flex-1 bg-gradient-to-l from-transparent to-white/[0.05]"></div>
+      </div>
+
+      <h3 class="font-display text-2xl sm:text-3xl font-light italic text-[#f0ece4]/45 text-center mb-10">
+        {{ socialTitle() }}
+      </h3>
+
+      <!-- Cards row -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/[0.04]">
+        @for (item of popularItems(); track item.id; let i = $index) {
+          <div
+            class="relative bg-[#0a0a0a] hover:bg-[#0f0f0f] transition-colors duration-500 group cursor-pointer menu-card overflow-hidden"
+            (click)="openModal(item)">
+
+            <!-- Image -->
+            <div class="relative h-44 overflow-hidden">
+              <div class="absolute inset-0 img-shimmer transition-opacity duration-500"
+                [style.opacity]="isImageLoaded(item.id) ? '0' : '1'"></div>
+              <img
+                [src]="item.image"
+                [alt]="item.name"
+                class="w-full h-full object-cover brightness-75 group-hover:brightness-90 group-hover:scale-[1.04] transition-all duration-700 ease-out"
+                loading="lazy"
+                (load)="imageLoaded(item.id)"
+                [style.opacity]="isImageLoaded(item.id) ? '1' : '0'">
+              <!-- Gradient fade to card bg -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/20 to-transparent"></div>
+
+              <!-- Rank badge -->
+              <div class="absolute top-3 left-3 w-7 h-7 border border-[#C8A96E]/30 flex items-center justify-center bg-[#0a0a0a]/70 backdrop-blur-sm">
+                <span class="text-[#C8A96E]/70 text-[10px] font-light tabular-nums">{{ i + 1 }}</span>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="px-5 pt-4 pb-5">
+              <!-- Name -->
+              <h4 class="font-display text-[#f0ece4]/80 text-lg font-light leading-snug mb-3 line-clamp-1">
+                {{ item.name }}
+              </h4>
+
+              <!-- Rating row -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <!-- Stars -->
+                  <div class="flex gap-0.5">
+                    @for (star of getStars(item.rating!); track $index) {
+                      <svg class="w-3 h-3" viewBox="0 0 20 20" fill="currentColor"
+                        [class]="star === 'full' ? 'text-[#C8A96E]' : star === 'half' ? 'text-[#C8A96E]/50' : 'text-white/10'">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                      </svg>
+                    }
+                  </div>
+                  <span class="text-[#f0ece4]/35 text-xs font-light tabular-nums">{{ item.rating }}</span>
+                </div>
+
+                <!-- Price -->
+                <span class="text-[#C8A96E]/80 font-light text-base">{{ item.price }} ₴</span>
+              </div>
+            </div>
+
+            <!-- Hover underline accent -->
+            <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-[#C8A96E]/0 via-[#C8A96E]/30 to-[#C8A96E]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+        }
+      </div>
+    </div>
+  }
 
   <!-- Hours note -->
   <div class="max-w-7xl mx-auto px-4 pb-20">
@@ -136,5 +500,101 @@
       </p>
     </div>
   </div>
-
 </div>
+
+
+<!-- ─── Quick View Modal ─── -->
+@if (selectedItem()) {
+  <div
+    class="fixed inset-0 z-[200] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4"
+    (click)="closeModal()">
+    <div
+      class="relative max-w-3xl w-full bg-[#111111] border border-white/[0.06] flex flex-col md:flex-row overflow-hidden max-h-[92vh]"
+      (click)="$event.stopPropagation()">
+
+      <!-- Close button -->
+      <button
+        (click)="closeModal()"
+        class="absolute top-4 right-4 z-20 w-8 h-8 flex items-center justify-center text-[#f0ece4]/25 hover:text-[#C8A96E] transition-colors duration-300">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <!-- Image panel -->
+      <div class="md:w-[45%] shrink-0 relative overflow-hidden">
+        <div class="h-56 md:h-full">
+          <img
+            [src]="selectedItem()!.image"
+            [alt]="selectedItem()!.name"
+            class="w-full h-full object-cover brightness-90">
+          <!-- Edge fade into dark card -->
+          <div class="hidden md:block absolute inset-y-0 right-0 w-20 bg-gradient-to-r from-transparent to-[#111111]"></div>
+          <div class="md:hidden absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#111111] to-transparent"></div>
+        </div>
+        <!-- Badges on modal image -->
+        <div class="absolute top-4 left-4 flex flex-col gap-1.5">
+          @if (selectedItem()!.popular) {
+            <span class="bg-[#C8A96E] text-[#0a0a0a] text-[8px] tracking-[0.2em] uppercase font-bold px-2.5 py-1">Популярне</span>
+          }
+          @if (selectedItem()!.vegetarian) {
+            <span class="bg-[#111111]/80 border border-emerald-600/50 text-emerald-400 text-[8px] tracking-[0.15em] uppercase px-2.5 py-1">Вегетаріанське</span>
+          }
+          @if (selectedItem()!.spicy) {
+            <span class="bg-[#111111]/80 border border-red-700/50 text-red-400 text-[8px] tracking-[0.15em] uppercase px-2.5 py-1">Гостре</span>
+          }
+        </div>
+      </div>
+
+      <!-- Details panel -->
+      <div class="flex-1 p-7 md:p-8 flex flex-col overflow-y-auto">
+        <!-- Category label -->
+        <p class="text-[#C8A96E]/50 text-[9px] tracking-[0.45em] uppercase font-light mb-4">
+          {{ selectedItem()!.category === 'breakfasts' ? 'Сніданки' : selectedItem()!.category === 'drinks' ? 'Напої' : 'Меню' }}
+        </p>
+
+        <!-- Name -->
+        <h2 class="font-display text-2xl sm:text-3xl font-light italic text-[#f0ece4]/90 mb-4 leading-tight pr-6">
+          {{ selectedItem()!.name }}
+        </h2>
+
+        <!-- Divider -->
+        <div class="h-px w-10 bg-gradient-to-r from-[#C8A96E]/30 to-transparent mb-5"></div>
+
+        <!-- Description -->
+        <p class="text-[#f0ece4]/45 text-sm font-light leading-relaxed mb-8">
+          {{ selectedItem()!.description }}
+        </p>
+
+        <!-- Meta -->
+        <div class="flex items-center gap-6 mb-auto">
+          <div class="flex flex-col gap-1">
+            <span class="text-[#f0ece4]/20 text-[9px] tracking-[0.3em] uppercase font-light">Вага</span>
+            <span class="text-[#f0ece4]/55 text-sm font-light">{{ selectedItem()!.weight }}</span>
+          </div>
+          <div class="w-px h-6 bg-white/[0.07]"></div>
+          <div class="flex flex-col gap-1">
+            <span class="text-[#f0ece4]/20 text-[9px] tracking-[0.3em] uppercase font-light">Приготування</span>
+            <span class="text-[#f0ece4]/55 text-sm font-light">{{ selectedItem()!.prepTime }}</span>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="border-t border-white/[0.06] mt-7 pt-6">
+          @if (selectedItem()!.sizes && selectedItem()!.sizes!.length > 0) {
+            <div class="flex gap-7">
+              @for (size of selectedItem()!.sizes; track size.label) {
+                <div class="flex flex-col gap-1">
+                  <span class="text-[#f0ece4]/25 text-[9px] tracking-[0.3em] uppercase font-light">{{ size.label }}</span>
+                  <span class="text-[#C8A96E] font-light text-3xl leading-none">{{ size.price }} ₴</span>
+                </div>
+              }
+            </div>
+          } @else {
+            <span class="text-[#C8A96E] font-light text-4xl leading-none">{{ selectedItem()!.price }} ₴</span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}
