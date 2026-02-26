@@ -8,7 +8,7 @@
     "glutenFree": true,
     "weight": "90мл",
     "prepTime": "3 хв",
-    "image": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/9050518/pexels-photo-9050518.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 72,
@@ -18,7 +18,7 @@
     "price": 30,
     "weight": "90мл",
     "prepTime": "3 хв",
-    "image": "https://images.unsplash.com/photo-1512568400610-62da28bc8a13?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/433175/pexels-photo-433175.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 73,
@@ -28,7 +28,7 @@
     "price": 55,
     "weight": "250мл",
     "prepTime": "3 хв",
-    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/2067628/pexels-photo-2067628.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 74,
@@ -38,7 +38,7 @@
     "price": 30,
     "weight": "250мл",
     "prepTime": "3 хв",
-    "image": "https://images.unsplash.com/photo-1519181245277-cffeb31da2e3?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/3846220/pexels-photo-3846220.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 75,
@@ -48,7 +48,7 @@
     "price": 30,
     "weight": "250мл",
     "prepTime": "3 хв",
-    "image": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/302887/pexels-photo-302887.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 76,
@@ -58,7 +58,7 @@
     "price": 30,
     "weight": "250мл",
     "prepTime": "3 хв",
-    "image": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/851555/pexels-photo-851555.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 77,
@@ -69,12 +69,18 @@
     "popular": true,
     "rating": 4.9,
     "sizes": [
-      { "label": "L", "price": 40 },
-      { "label": "XL", "price": 45 }
+      {
+        "label": "L",
+        "price": 40
+      },
+      {
+        "label": "XL",
+        "price": 45
+      }
     ],
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/9249368/pexels-photo-9249368.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 78,
@@ -83,12 +89,18 @@
     "description": "Вершкова кава з ніжним смаком ванілі",
     "price": 55,
     "sizes": [
-      { "label": "L", "price": 55 },
-      { "label": "XL", "price": 65 }
+      {
+        "label": "L",
+        "price": 55
+      },
+      {
+        "label": "XL",
+        "price": 65
+      }
     ],
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/3860485/pexels-photo-3860485.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 79,
@@ -97,12 +109,18 @@
     "description": "Міцний еспресо з невеликою кількістю оксамитового молока",
     "price": 60,
     "sizes": [
-      { "label": "L", "price": 60 },
-      { "label": "XL", "price": 70 }
+      {
+        "label": "L",
+        "price": 60
+      },
+      {
+        "label": "XL",
+        "price": 70
+      }
     ],
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/1252933/pexels-photo-1252933.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 80,
@@ -113,12 +131,18 @@
     "popular": true,
     "rating": 4.8,
     "sizes": [
-      { "label": "L", "price": 45 },
-      { "label": "XL", "price": 50 }
+      {
+        "label": "L",
+        "price": 45
+      },
+      {
+        "label": "XL",
+        "price": 50
+      }
     ],
     "weight": "350мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/13623762/pexels-photo-13623762.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 81,
@@ -132,7 +156,7 @@
     "rating": 4.9,
     "weight": "330мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/28730007/pexels-photo-28730007.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 82,
@@ -142,7 +166,7 @@
     "price": 60,
     "weight": "350мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/3151775/pexels-photo-3151775.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 83,
@@ -152,7 +176,7 @@
     "price": 60,
     "weight": "350мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/302900/pexels-photo-302900.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 84,
@@ -162,7 +186,7 @@
     "price": 75,
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/14761085/pexels-photo-14761085.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 85,
@@ -172,7 +196,7 @@
     "price": 40,
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/8983399/pexels-photo-8983399.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 86,
@@ -182,7 +206,7 @@
     "price": 50,
     "weight": "250мл",
     "prepTime": "5 хв",
-    "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop&auto=format"
+    "image": "https://images.pexels.com/photos/12703064/pexels-photo-12703064.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     "id": 87,
