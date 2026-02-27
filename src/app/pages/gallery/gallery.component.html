@@ -47,7 +47,7 @@
           <div class="px-4 py-3 border-t border-[#C8A96E]/[0.08] flex items-center justify-between gap-2">
             <p class="text-[#f0ece4]/40 text-xs font-light">{{ image.alt }}</p>
             <span class="shrink-0 text-[#C8A96E]/35 text-[9px] tracking-[0.3em] uppercase font-light">
-              {{ image.category === 'drinks' ? 'Напій' : 'Страва' }}
+              {{ image.category === 'drinks' ? 'Напій' : image.category === 'interior' ? 'Заклад' : 'Страва' }}
             </span>
           </div>
         </div>

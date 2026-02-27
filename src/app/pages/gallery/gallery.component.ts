@@ -19,6 +19,11 @@ export class GalleryComponent {
   activeImage = signal<GalleryImage | null>(null);
 
   images: GalleryImage[] = [
+    // Заклад
+    { id: 51, src: '/interior-1.jpg', alt: 'Зал кафе — логотип La Mokka',          category: 'interior' },
+    { id: 52, src: '/interior-2.jpg', alt: 'Затишний зал з оксамитовими диванами', category: 'interior' },
+    { id: 53, src: '/interior-3.jpg', alt: 'Вечірній зал з підсвіченим логотипом', category: 'interior' },
+    { id: 54, src: '/interior-4.jpg', alt: 'Фірмова кава La Mokka',                category: 'interior' },
     // Сніданки
     { id: 1,  src: 'https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/Preenzw-aqcySWP-YGybFlP.jpeg',         alt: 'Мюнхенський сніданок',                   category: 'food' },
     { id: 2,  src: 'https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/LRYIdCZ-IbDKtyL-hGCcoeC_prepare.jpeg', alt: 'Авокадо тост з лососем',                  category: 'food' },
