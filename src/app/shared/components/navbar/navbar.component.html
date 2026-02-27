@@ -1,7 +1,8 @@
 <header
   [class]="isScrolled() ? 'bg-[#0a0a0a]/96 backdrop-blur-md shadow-[0_1px_0_rgba(200,169,110,0.08)]' : 'bg-transparent'"
   class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="absolute inset-0 bg-gradient-to-b from-black to-transparent pointer-events-none"></div>
+  <nav class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-[72px]">
 
       <!-- Logo -->
@@ -39,6 +40,19 @@
            class="nav-link text-[#f0ece4]/55 hover:text-[#C8A96E] transition-colors duration-300 text-[11px] tracking-[0.3em] uppercase font-light">
           Контакти
         </a>
+        <span class="w-px h-3 bg-[#C8A96E]/20"></span>
+        <!-- Accessibility button -->
+        <div class="relative">
+          <button (click)="toggleA11yPanel()" aria-label="Налаштування доступності"
+            class="text-[11px] tracking-[0.3em] uppercase font-light border border-[#C8A96E]/30
+                   px-3 py-1 text-[#C8A96E]/70 hover:text-[#C8A96E] hover:border-[#C8A96E]/60
+                   transition-colors duration-300">
+            Аа
+          </button>
+          @if (showA11yPanel()) {
+            <app-accessibility-panel (close)="showA11yPanel.set(false)" />
+          }
+        </div>
       </div>
 
       <!-- Mobile Hamburger -->
@@ -63,7 +77,7 @@
 
     <!-- Mobile Menu -->
     <div
-      [class]="isMenuOpen() ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'"
+      [class]="isMenuOpen() ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'"
       class="md:hidden overflow-hidden transition-all duration-400 border-t border-[#C8A96E]/8">
       <div class="flex flex-col py-5 gap-0 bg-[#0a0a0a]">
         <a routerLink="/" routerLinkActive="text-[#C8A96E]" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()"
@@ -75,9 +89,44 @@
           Галерея
         </a>
         <a routerLink="/contact" routerLinkActive="text-[#C8A96E]" (click)="closeMenu()"
-           class="text-[#f0ece4]/55 hover:text-[#C8A96E] px-6 py-4 text-[11px] tracking-[0.3em] uppercase font-light transition-colors">
+           class="text-[#f0ece4]/55 hover:text-[#C8A96E] px-6 py-4 text-[11px] tracking-[0.3em] uppercase font-light transition-colors border-b border-white/[0.04]">
           Контакти
         </a>
+
+        <!-- Accessibility section -->
+        <div class="border-t border-white/[0.04] pt-2 mt-2">
+          <p class="px-6 py-2 text-[9px] tracking-[0.4em] uppercase text-[#C8A96E]/40 font-light">
+            Доступність
+          </p>
+          <button (click)="a11y.toggle('largeText')"
+                  [ngClass]="mobileA11yBtnClass(a11y.largeText())"
+                  [attr.aria-pressed]="a11y.largeText()">
+            <span class="flex-1">Великий шрифт</span>
+            <span [ngClass]="mobileDotClass(a11y.largeText())"
+                  class="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200"></span>
+          </button>
+          <button (click)="a11y.toggle('highContrast')"
+                  [ngClass]="mobileA11yBtnClass(a11y.highContrast())"
+                  [attr.aria-pressed]="a11y.highContrast()">
+            <span class="flex-1">Високий контраст</span>
+            <span [ngClass]="mobileDotClass(a11y.highContrast())"
+                  class="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200"></span>
+          </button>
+          <button (click)="a11y.toggle('noAnimations')"
+                  [ngClass]="mobileA11yBtnClass(a11y.noAnimations())"
+                  [attr.aria-pressed]="a11y.noAnimations()">
+            <span class="flex-1">Без анімацій</span>
+            <span [ngClass]="mobileDotClass(a11y.noAnimations())"
+                  class="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200"></span>
+          </button>
+          <button (click)="a11y.toggle('enhancedFocus')"
+                  [ngClass]="mobileA11yBtnClass(a11y.enhancedFocus())"
+                  [attr.aria-pressed]="a11y.enhancedFocus()">
+            <span class="flex-1">Покращений фокус</span>
+            <span [ngClass]="mobileDotClass(a11y.enhancedFocus())"
+                  class="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200"></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>

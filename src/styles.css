@@ -113,3 +113,24 @@ html {
 .nav-link.active::after {
   width: 100%;
 }
+
+/* === Accessibility Classes === */
+html.a11y-large { zoom: 1.18; }
+
+html.a11y-contrast { filter: contrast(1.35) brightness(1.05); }
+html.a11y-contrast img { filter: contrast(0.74) brightness(0.952); }
+
+html.a11y-motion *,
+html.a11y-motion *::before,
+html.a11y-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+html.a11y-focus *:focus-visible {
+  outline: 2px solid #C8A96E !important;
+  outline-offset: 3px !important;
+  border-radius: 2px;
+}
