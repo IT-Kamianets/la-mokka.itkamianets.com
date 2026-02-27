@@ -1,4 +1,4 @@
-import { Component, signal, HostListener, inject } from '@angular/core';
+import { Component, signal, HostListener, inject, effect } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CommonModule, NgClass } from '@angular/common';
 import { AccessibilityService } from '../../services/accessibility.service';
@@ -14,8 +14,15 @@ export class NavbarComponent {
   isMenuOpen = signal(false);
   isScrolled = signal(false);
   showA11yPanel = signal(false);
+  showMobileA11y = signal(false);
 
   a11y = inject(AccessibilityService);
+
+  constructor() {
+    effect(() => {
+      document.body.style.overflow = this.showA11yPanel() ? 'hidden' : '';
+    });
+  }
 
   @HostListener('window:scroll')
   onScroll() {
@@ -32,6 +39,10 @@ export class NavbarComponent {
 
   toggleA11yPanel() {
     this.showA11yPanel.update(v => !v);
+  }
+
+  toggleMobileA11y() {
+    this.showMobileA11y.update(v => !v);
   }
 
   mobileA11yBtnClass(active: boolean): string {

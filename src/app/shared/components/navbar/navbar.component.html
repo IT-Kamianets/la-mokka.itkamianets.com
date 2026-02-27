@@ -94,10 +94,19 @@
         </a>
 
         <!-- Accessibility section -->
-        <div class="border-t border-white/[0.04] pt-2 mt-2">
-          <p class="px-6 py-2 text-[9px] tracking-[0.4em] uppercase text-[#C8A96E]/40 font-light">
-            Доступність
-          </p>
+        <div class="border-t border-white/[0.04] mt-2">
+          <button (click)="toggleMobileA11y()"
+                  [ngClass]="showMobileA11y() ? 'text-[#C8A96E]/70' : 'text-[#C8A96E]/40'"
+                  class="w-full flex items-center justify-between px-6 py-4 text-[9px] tracking-[0.4em] uppercase font-light transition-colors duration-200">
+            <span>Доступність</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" class="w-3 h-3 transition-transform duration-300"
+                 [class.rotate-180]="showMobileA11y()">
+              <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div [class]="showMobileA11y() ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'"
+               class="overflow-hidden transition-all duration-300">
           <button (click)="a11y.toggle('largeText')"
                   [ngClass]="mobileA11yBtnClass(a11y.largeText())"
                   [attr.aria-pressed]="a11y.largeText()">
@@ -126,6 +135,7 @@
             <span [ngClass]="mobileDotClass(a11y.enhancedFocus())"
                   class="w-2 h-2 rounded-full flex-shrink-0 transition-colors duration-200"></span>
           </button>
+          </div>
         </div>
       </div>
     </div>
