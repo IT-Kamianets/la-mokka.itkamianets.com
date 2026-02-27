@@ -79,6 +79,13 @@ export class GalleryComponent {
     { id: 50, src: 'https://cdn-media.choiceqr.com/prod-eat-la-mokka/menu/kBaVdaq-xJkEflg-ByzDwCh.jpeg',         alt: 'Джміль',                                 category: 'drinks' },
   ];
 
+  constructor() {
+    for (let i = this.images.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.images[i], this.images[j]] = [this.images[j], this.images[i]];
+    }
+  }
+
   openLightbox(image: GalleryImage) {
     this.activeImage.set(image);
     this.lightboxOpen.set(true);
